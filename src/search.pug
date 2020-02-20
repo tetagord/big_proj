@@ -1,0 +1,95 @@
+extends pug/base
+
+append vars
+	- html.classList.push("page-index")
+	- meta.charset = "utf-8"
+	- meta.description = "Shuledas"
+	- title = "Shuledas"
+	- meta.viewport = "width=device-width, initial-scale=1" 
+
+block content
+	include header.pug
+	main
+		.search
+			.container 
+				.col-12
+					.row
+						form.flex.search-form
+							input(type="text" placeholder="Введите поисковый запрос").search-input
+							button.btn.btn--search.align-self-center Искать
+								i.fas.fa-search
+		.container 
+				.col-12.search-article
+			 
+						.search--nav
+							p.article-title
+								i.fas.fa-school
+								span.article-title--name Школы
+								span.article-title--qty 325
+							p.article-title
+								i.fas.fa-school
+								span.article-title--name вузы
+								span.article-title--qty 125
+							p.article-title
+								i.fas.fa-school
+								span.article-title--name Статьи
+								span.article-title--qty 40
+							p.article-title
+								i.fas.fa-school
+								span.article-title--name форум
+								span.article-title--qty 916
+						.search--for
+							mixin article(name,href)
+								.search-article--item.article--item.flex.align-items-center
+									.article--img 
+										img(src="https://via.placeholder.com/64x64")
+									.article--content 
+										span.article--name=name 
+									a(href=href).link-mask
+							.search-wrap--item
+								.row
+
+									+article("Krüger Internat und Schulen", "/school_not_paid.html")
+									+article("Louisenlund", "/school_not_paid.html")
+									+article("Internat Solling", "/school_not_paid.html")
+									+article("Schule Birklehof", "/school_not_paid.html")
+									+article("Landerziehungsheim Schule Marienau", "/school_not_paid.html")
+							.search-wrap--item
+								.row
+
+									+article("Bachelor of Business Administration in Hospitality Management ", "/university_not_paid.html")
+									+article("Master of Arts in Hospitality, Health and Wellbeing", "/university_not_paid.html")
+									+article("Master of Arts in Hospitality, Health and Wellbeing", "/university_not_paid.html")
+									+article("Факультет архитектуры",  "/university_not_paid.html")
+									+article("Искусство приготовления кондитерской выпечки и шоколадных изделий»", "/university_not_paid.html")
+							.search-wrap--item
+								.row
+
+									+article("Заголовок динною до 92 символов может поместиться 3 строчки",  "/articles.html")
+									+article("Заголовок динною до 92 символов может поместиться 3 строчки",  "/articles.html")
+									+article("Заголовок динною до 92 символов может поместиться 3 строчки",  "/articles.html")
+									+article("Заголовок динною до 92 символов может поместиться 3 строчки",  "/articles.html")
+									+article("Заголовок динною до 92 символов может поместиться 3 строчки",  "/articles.html")
+							.search-wrap--item
+								.row
+
+									+article("Заголовок динною до 92 символов может поместиться 3 строчки")
+									+article("Заголовок динною до 92 символов может поместиться 3 строчки")
+									+article("Заголовок динною до 92 символов может поместиться 3 строчки")
+									+article("Заголовок динною до 92 символов может поместиться 3 строчки")
+									+article("Заголовок динною до 92 символов может поместиться 3 строчки")
+
+							//- .search-wrap--item
+								.row
+									p.article-title
+										i.fas.fa-school
+										span.article-title--name блог
+										span.article-title--qty 916
+									+article("Заголовок динною до 92 символов может поместиться 3 строчки")
+									+article("Заголовок динною до 92 символов может поместиться 3 строчки")
+									+article("Заголовок динною до 92 символов может поместиться 3 строчки")
+									+article("Заголовок динною до 92 символов может поместиться 3 строчки")
+									+article("Заголовок динною до 92 символов может поместиться 3 строчки")
+
+
+	include footer.pug

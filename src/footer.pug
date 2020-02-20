@@ -1,0 +1,103 @@
+footer.footer
+	.container.flex.flex-wrap
+		.col-12.col-md-6.col-lg-3.footer-item
+			.row
+				h4.footer-item--title Навигация
+				nav.footer-nav
+					ul.footer-nav--ul
+						mixin nav_link(link, text)
+							li.footer-nav--li
+								a(href=link).footer-link=text
+						+nav_link("/", "Schuledas")
+						+nav_link("/school_list.html", "Школы")
+						+nav_link("/universities_list.html", "Вузы")
+						+nav_link("/articles.html", "Статьи")
+						+nav_link("/post.html", "Статья")
+						+nav_link("#", "Форум")
+						+nav_link("/search.html", "Поиск")
+						+nav_link("#", "Войти")
+
+		.col-12.col-md-6.col-lg-3.footer-item
+			.row
+				h4.footer-item--title Компания
+				a.footer-link(href="#") Политика конфеденциальности
+				a.footer-link(href="#") Условия предоставления услуг
+				a.footer-link(href="#") Свяжитесь с нами
+
+		.col-12.col-md-6.col-lg-3.footer-item
+			.row
+				h4.footer-item--title Для студентов
+				a.footer-link(href="#") Вопросы и ответы
+
+		.col-12.col-md-6.col-lg-3.footer-item
+			.row
+				h4.footer-item--title Для партнеров
+				a.footer-link(href="#") Вопросы и ответы 
+	.footer-bottom
+		.container 
+			.col-12
+				.row.justify-content-between
+					p.copyright © 2018 Schuledas.
+					.footer-social
+						a(href="#").footer-social--link
+							i.fas.fa-link
+						a(href="#").footer-social--link
+							i.fab.fa-twitter
+						a(href="#").footer-social--link
+							i.fab.fa-facebook-f
+button.to-top
+	i.fas.fa-arrow-circle-up
+
+
+.popup-mask
+.pupup.flex.flex-column.popup-main.popup-hide 
+	p.popup--title Вход или регистрация
+	.login-social
+		a(href="#").login-social--link.fb Facebook
+			i.fab.fa-facebook-f
+		a(href="#").login-social--link.tw Twitter
+			i.fab.fa-twitter
+		a(href="#").login-social--link.vk VK
+			i.fab.fa-vk
+		a(href="#").login-social--link.gg Google
+			i.fab.fa-google
+	.choose-login
+		span.choose-login--link.mail Почта 
+		span  или
+		span.choose-login--link.phone  телефон
+	p.rules-agree Регестрируясь, я принимаю условия использования
+
+.pupup.flex.flex-column.popup-login.popup-hide
+	p.popup--title Вход или регистрация
+		i.fas.fa-chevron-left
+	.popup-inputs
+		input(type="text" placeholder="Почта" name="user_mail").popup--input
+		input(type="password" placeholder="Пароль" name="user_pass").popup--input
+		//- p.error-alert 123
+		button.btn.btn--popup.btn--popup-reg.btn--disable Зарегистрироваться
+	.switch-wrapper
+		div
+			label Работодатель
+			input(type="radio" name="role" data-role="boss" checked)
+
+		div
+			label Соискатель
+			input(type="radio" name="role" data-role="search")
+	.choose-login
+		span.choose-login--link.forgot Забыли пароль?
+
+.pupup.flex.flex-column.popup-tel.popup-hide
+	p.popup--title Вход или регистрация
+		i.fas.fa-chevron-left
+	.popup-inputs
+		input(type="text" placeholder="+1").popup--input 
+		button.btn.btn--popup.btn--popup-login.btn--disable Выслать мне код
+	.choose-login
+		span.choose-login--link.forgot У меня есть пароль
+
+		
+
+<script src="js/jquery-3.1.1.min.js"></script>
+//- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="js/main_table.js"></script>
+<script src="js/slick.min.js"></script>

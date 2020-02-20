@@ -1,0 +1,21 @@
+extends pug/base
+
+append vars
+	- html.classList.push("page-index")
+	- meta.charset = "utf-8"
+	- meta.description = "Shuledas"
+	- title = "Shuledas"
+	- meta.viewport = "width=device-width, initial-scale=1" 
+
+block content 
+	.not_found
+		include header_career.pug
+		main.content 
+			.container
+				.row
+					.not_found--content.flex
+						p.not_found--text Запрашиваемя страница не найдена
+						p.not_found--error 404
+						p.not_found--text возможно, был указан ошибочный адрес или страница была удалена
+						a(href="/").btn перейти на главную
+		include footer.pug

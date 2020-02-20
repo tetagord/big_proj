@@ -1,0 +1,70 @@
+extends pug/base
+
+append vars
+	- html.classList.push("page-index")
+	- meta.charset = "utf-8"
+	- meta.description = "Shuledas"
+	- title = "Shuledas"
+	- meta.viewport = "width=device-width, initial-scale=1"
+block content 
+	.company
+		include header_career.pug
+	 
+		main
+			.cv-fon
+				img(src="images/shuledas_career/apple_bg.png", alt="")
+			.container
+				.row
+					.col-12.col-xl-6.cv-left
+						img(src="images/shuledas_career/apple.png", alt="").cv-avatar
+						.cv-exp.col-12
+							h2.h2
+								span.h-title Вакансии
+									span.h-qty 123
+							.row 
+								mixin vacancy  
+									.col-12
+										.vacancy
+											p.vacancy--title Front-End Developer (Vue.js)
+											p.vacancy--type IT
+											.cv-person.flex.flex-column
+												.cv-person--info.location
+													p локации
+													p.info Cupertino, US (HQ) 1 Apple Park Way
+												.cv-person--info.salary
+													p Зарплатные ожидания  в год
+													p.info €100,000 – €130,000
+												.cv-person--info.reqrm
+													p Требования
+													p.info JavaScript, Vue.js, Webpack, Node.js, Кроссбраузерная верстка, Pug, Stylus, Git, GraphQL , Адаптивная верстка
+												.cv-person--info.lvl
+													p Квалификация
+													p.info Middle
+												.cv-person--info.type
+													p Тип занятости
+													p.info Fulltime
+								+vacancy
+								+vacancy
+							
+					.col-12.col-xl-6.cv-right
+						.btn.btn--cv-full Редактировать
+						.cv--item
+							h1.h1 Apple Inc. 
+							.cv-full-content
+								h2.h2.company--summary The most powerful products for business are the ones people
+								p Apple products have always been designed for the way we work as much as for the way we live. Today they help employees to work more simply and productively, solve problems creatively, and collaborate with a shared purpose. And they’re all designed to work together beautifully. When people have access to iPhone, iPad, and Mac, they can do their best work and reimagine the future of their business.
+								.cv-person.flex.flex-column
+									.cv-person--info.location
+										p локации
+										p.info Cupertino, US (HQ) 1 Apple Park Way Sydney, AU. PO Box A2629 Toronto, CA. 1600 120 Bremner Blvd Causeway Bay, HK. Room 2401, Block 1, Times Square Bengaluru, IN. UB City No.24 Vittal Mallya Rd Cork, IE. Hollyhill Ln
+									.cv-person--info.site
+										p Веб сайт
+										p.info https://vik.com/
+									.cv-person--info.tel
+										p Количество сотрудников
+										p.info ~ 10,000 человек
+		include footer.pug
+								
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	script(src="js/jquery-3.1.1.min.js")
+

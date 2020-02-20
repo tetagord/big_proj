@@ -1,0 +1,166 @@
+extends pug/base
+
+append vars
+	- html.classList.push("page-index")
+	- meta.charset = "utf-8"
+	- meta.description = "Shuledas"
+	- title = "Shuledas"
+	- meta.viewport = "width=device-width, initial-scale=1"
+block content 
+	.cv-full
+		include header_career.pug
+	 
+		main
+			.main-popup.cv
+				.container
+					.row.align-items-center.justify-content-between
+						p.main-popup--number free
+						span.main-popup--summary 
+							span
+							| Шаг 1 из 2. Создать аккаунт чтоб связаться
+						span.main-popup--close
+							i.fas.fa-times-circle
+						.main-popup--note
+							p Зарегистрируйтесь и выберите тарифный план чтоб просмотреть контактную информацию
+			.cv-fon
+				img(src="images/shuledas_career/avatar_big.png", alt="")
+			.container
+				.row
+					.col-12.col-xl-6.cv-left
+						img(src="images/shuledas_career/avatar.png", alt="").cv-avatar
+						.cv-exp.col-12
+							h2.h2 Опыт
+							.row
+								mixin cv_expr(company,position,did,date)
+									.cv-exp-content
+										p.cv-company=company
+										p.cv-position=position
+										p.cv-did=did
+										p.cv-date=date
+
+								
+								+cv_expr(   'DecisionMapper',
+											'UI/UX Designer (Team leader)',
+											'Mobile/web apps design with animations and care for each pixel',
+											'Aug 2015 – Feb 2018 • 2 yrs 7 mos'	 )
+								+cv_expr(   'Freelance',
+											'UI/UX Designer',
+											'Design websites and mobile applications',
+											'Июль 2014 – Июль 2015 • 1 год 1 месяц'	 )
+								+cv_expr(   'Elantum',
+											'UI/UX Designer (Team leader)',
+											'Website design and graphic arts industry, developing solutions to increase sales of small and medium business',
+											'Ноябрь 2010 – Январь 2012 • 1 год 3 месяца'	 )
+						.cv-exp.col-12
+							h2.h2 Статистика
+							.cv-chart
+								.cv-chart--top.flex.justify-content-between
+									span.eye просмотры
+									.views.flex
+										span 15  
+										span за 
+										.filter-select
+											select
+												option(value="1") Сантябрь
+												option(value="2") Октябрь
+												option(value="3") Ноябрь
+								#chartView
+							.cv-chart
+								.cv-chart--top.flex.justify-content-between
+									span.offer Предложения / Отклик
+									.views.flex
+										span 15  
+										span за 
+										.filter-select
+											select
+												option(value="1") Сантябрь
+												option(value="2") Октябрь
+												option(value="3") Ноябрь
+								#chartOffer
+
+
+						
+							
+					.col-12.col-xl-6.cv-right
+						.btn.btn--cv-full Редактировать
+						.cv--item
+							h1.h1 Hello, I'm 
+								span Viktor
+							.cv-full-content.fst
+								span Consultant UI/UX Architect, Designer who Codes, Product Designer
+								.cv-person.flex.flex-column
+									.cv-person--info.location
+										p локации
+										p.info Cupertino, US (HQ) 1 Apple Park Way
+									.cv-person--info.site
+										p Веб сайт
+										p.info https://vik.com/
+									.cv-person--info.tel
+										p телефон
+										p.info +1 234 567 89 01
+									.cv-person--info.email
+										p email
+										p.info viktor@gmail.com
+									.cv-person--info.salary
+										p Зарплатные ожидания  в год
+										p.info €100,000 – €130,000
+						.cv--item 
+							h2.h2
+								span.h-title Навыки
+							.cv-full-content.flex.flex-wrap
+								mixin skills(skill)
+									.cv-point.skill
+										p=skill
+								+skills('UI/UX')
+								+skills('Cinema 4D')
+								+skills('Sketch')
+								+skills('JIRA')
+								+skills('HTML')
+								+skills('CSS')
+								+skills('Adobe Creative Cloud')
+								+skills('Agile (Xp, Scrum)')
+								+skills('JS')
+
+						.cv--item 
+							h2.h2
+								span.h-title Знание языков
+							.cv-full-content.flex.flex-column
+								mixin lang(lang,lang_lvl)
+									.cv-point.lang
+										p=lang
+										p=lang_lvl
+
+								+lang('English', 'Professional working proficiency')
+								+lang('Russian', 'Native or bilingual proficiency')
+								+lang('Ukrainian', 'Native or bilingual proficiency')
+
+						.cv--item 
+							h2.h2
+								span.h-title Образование
+							.cv-full-content.flex.flex-column
+								mixin edu(lang,lang_lvl)
+									.cv-edu
+										p=lang
+										p=lang_lvl
+
+								+edu('Crimean Economic Institute of Kiev Hetman National Economic University', 'Management • (2007 – 2012)')
+								+edu('Crimean Economic Institute of Kiev Hetman National Economic University', 'Management • (2007 – 2012)')
+
+						.cv--item 
+							h2.h2
+								span.h-title Сертификаты
+							.cv-full-content.flex.flex-column
+								mixin sert(lang,lang_lvl)
+									.cv-sert
+										img(src="images/shuledas_career/sert.png")
+										.cv-sert--info
+											p=lang
+											p=lang_lvl
+
+								+sert('Crimean Economic Institute of Kiev Hetman National Economic University', 'Management • (2007 – 2012)')
+								+sert('Crimean Economic Institute of Kiev Hetman National Economic University', 'Management • (2007 – 2012)')
+
+								
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	script(src="js/jquery-3.1.1.min.js")
+

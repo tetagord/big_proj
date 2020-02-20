@@ -1,0 +1,80 @@
+extends pug/base
+
+append vars
+	- html.classList.push("page-index")
+	- meta.charset = "utf-8"
+	- meta.description = "Shuledas"
+	- title = "Shuledas"
+	- meta.viewport = "width=device-width, initial-scale=1"
+
+block content
+	.forum-category
+		include header.pug
+		main
+			.container  
+				.col-12.breadcrumbs
+					.row
+						ul.flex-wrap
+							li
+								a(href="/forum.html")  Все форумы
+								i.fas.fa-chevron-right
+			
+							li
+								a(href="/forum.html") Образование 
+								i.fas.fa-chevron-right
+
+							li
+								span  Форум о школах-пансионах
+ 
+
+				.col-12
+					.row.justify-content-between
+						.node-top
+							.col-12
+								.row.justify-content-between
+									h2.h2 Форум о школах-пансионах
+									.forum-settings.flex 
+										a(href="#") 
+											i.fab.fa-hubspot
+											span Подписаться на новые ответы
+							.col-12
+								.row.justify-content-between.align-items-center
+									p Форум о школах-пансионах
+									button.btn.btn--add-theme Добавить тему
+										i.fas.fa-plus-circle
+
+				.col-12
+					.row.forum-wrap
+						mixin forum_type
+							.forum-type--item.flex.justify-content-between 
+								.forum-type--left.flex.align-items-center.flex-wrap
+									img(src="https://via.placeholder.com/64x64", alt="")
+									div.align-self-start
+										a(href="/forum_item.html") Такой себе пост
+										p Пример oписания форума
+								.forum-type--center
+									span Недавние Темы
+										i.fas.fa-arrow-circle-down
+									.forum-type--themes
+										.forum-type--theme.flex
+											i.fas.fa-map-pin
+											div
+												p This concept has navigated right into my heart
+												p От 
+													a(href="#") Артур Балу
+													| , 5 дней назад
+										.forum-type--theme.flex
+											i.fas.fa-lock
+											div
+												p My 35 year old daughter rates this shot very cool m8
+												p От 
+													a(href="#").moder  Админ Васильевич Солнечный
+													| , 5 дней назад
+								.forum-type--right.flex.justify-content-between
+									p 2
+									p 8
+						+forum_type
+						+forum_type
+						+forum_type 
+						
+		include footer.pug

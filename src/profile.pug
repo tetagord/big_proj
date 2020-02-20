@@ -1,0 +1,69 @@
+extends pug/base
+
+append vars
+	- html.classList.push("page-index")
+	- meta.charset = "utf-8"
+	- meta.description = "Shuledas"
+	- title = "Shuledas"
+	- meta.viewport = "width=device-width, initial-scale=1"
+	<link rel="stylesheet" href="css/slider/jslider.css" type="text/css">
+
+
+block content
+	.profile
+		include header.pug
+		.profile-top
+			.container 
+				.row
+					.flex.col-12
+						.profile-top--img.align-self-end
+							img(src="https://via.placeholder.com/280x280")
+							.btn-profile-edit
+								i.fas.fa-edit
+						h1.h1 Профиль
+						button.btn.btn--profile.align-self-end Сохранить
+		.container.flex
+				.col-lg-3.hide-in-992
+				.profile-content.col-12.col-lg-9 
+					.row
+						mixin profile_input(label,placeholder,classn,name)
+							.field.flex.flex-column(class=classn)
+								label.field--label=label
+								input.field--input(type="text" placeholder=placeholder name=name) 
+						.profile-content--item.flex.flex-column
+							+profile_input('Имя', 'Имя', '','name')
+							.field.field--last
+								p.field--label Пол
+								.filter-select.js-filter
+									select
+										option(value="0") Выберите ваш пол
+										option(value="1") Не указано
+										option(value="2") Мужской
+										option(value="3") Женский
+							h2.h2 Адрес
+							+profile_input('Страна', 'Страна проживания', 'field--first','country')
+							+profile_input('Область', 'Область проживания', '','city_area')
+							+profile_input('Город', 'Город проживания', '', 'city')
+							.profile-content--item.justify-content-between.flex
+								+profile_input('Дом', 'Дом, корпус','','house')
+								+profile_input('Квартира', 'Номер квартиры', '','flat')
+						.profile-content--item.flex.flex-column.hide-in-768
+							+profile_input('Фамилия', 'Фамилия','','surname')
+							.field.flex.flex-column.field--single
+								input.field--input(type="text" placeholder='Индекс' name="index") 
+							+profile_input('Штат', 'Регион, АО, Край, Республика', '','region')
+							+profile_input('Улица', 'Улица проживания', 'profile-input--single','street')
+						.profile-content--item.flex.flex-column
+							h2.h2 Обо мне
+							.field.flex.flex-column.field--first
+								.field--label
+								input.field--input(type="text" placeholder='Краткое описание деятельности') 
+							.field.flex.flex-column
+								textarea(name="textarea" placeholder='Подробно').field--input
+		.profile-bottom
+			.container.flex.justify-content-end
+				button.btn.btn--save.btn--save-tranparent Отменить
+				button.btn.btn--save Сохранить
+
+
+		include footer.pug 

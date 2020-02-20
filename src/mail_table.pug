@@ -1,0 +1,35 @@
+extends pug/base
+
+append vars
+	- html.classList.push("page-index")
+	- meta.charset = "utf-8"
+	- meta.description = "Shuledas"
+	- title = "Shuledas"
+	- meta.viewport = "width=device-width, initial-scale=1"
+block content  
+	include header_career.pug
+
+	main.container 
+		.row
+			.col-12
+				table
+					thead(style="background-color: #f2f4ffvtkr")
+						td(style="padding: 5px") Опции
+						td(style="padding: 5px") Описание
+						td(style="padding: 5px") Почта 
+					tbody
+						tr
+							td(style="padding: 5px") [plan-radio] 
+							td(style="padding: 5px") Unterstützung und Monitoring beim Einreise- und Visumverfahren für Ihren Kandidaten 700EUR ) [stripeToken] 
+							td(style="padding: 5px") flashimage@icloud.com [_token]  
+
+				table
+					thead(style="background-color: #f2f4ffvtkr") 
+						td(style="padding: 5px; font-weight: 700") Месяцы
+					tbody
+						tr 
+							td(style="padding: 5px; font-weight: 700") 6 Monat
+	include footer.pug  
+	script(src="js/jquery-3.1.1.min.js")
+								
+

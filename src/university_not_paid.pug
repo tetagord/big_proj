@@ -1,0 +1,141 @@
+extends pug/base
+
+append vars
+	- html.classList.push("page-index")
+	- meta.charset = "utf-8"
+	- meta.description = "Shuledas"
+	- title = "Shuledas"
+	- meta.viewport = "width=device-width, initial-scale=1"
+
+block content
+	include header.pug
+	main
+		.node-top.flex
+			.node-top--img
+				img(src="https://via.placeholder.com/607x607") 
+			.node-top--info.flex.flex-column
+				.node-top--content
+					.post-title.post-title--padding.flex.flex-column.justify-content-center 
+						h1.h1 Schule Birklehof
+						h4.h1-summary Бирклехоф – одна из ведущих школ-пансионов Германии по направлениям: естественные науки и техника, музыка и искусство.
+						a(href="#").link.institution-link https://birklehof.online/
+							i.fas.fa-link 
+				.node-join.flex.justify-content-between
+					.insitution-page-cost
+						p.institution-period За все семестры
+						p.institution-price € 141,660
+
+					button.btn.btn--brightcyan-color.align-self-center Спросить в чате
+		.container
+			.row
+				.institution-content--paid.col-12.col-lg-5
+					.row
+						.institution-content--item
+							h2.h2 Распределение студентов
+							#studentsChart
+						.institution-content--item
+							h2.h2 Атестаты
+							p.institution-content-title.flex
+								i.fas.fa-graduation-cap
+								span Абитур
+						.institution-content--item
+							h2.h2 Дополнительные расходы
+							.institution-table.flex
+								.institution-table--left.flex.flex-column
+									p Oбучение и проживание
+								.institution-table--right.flex.flex-column
+									p.institution-table--title € 34,320 в год
+									p 2% скидка, если оплачивается за год вперед
+							.institution-table.flex
+								.institution-table--left.flex.flex-column
+									p Депозит
+								.institution-table--right.flex.flex-column
+									p.institution-table--title € 4,000
+									p Одноразовый взнос (возвращается)
+									p – если оплачивается за год вперед
+									p Иначе € 4,000
+						.institution-content--item
+							h2.h2 Условия скидки
+							p.institution-content-title.flex
+								i.fas.fa-graduation-cap
+								span 50% скидка за второго и каждого последующего ребенка в семье, пока первый обучается в школе Бирклехоф. 
+							p.institution-content-title.flex
+								i.fas.fa-graduation-cap
+								span 2% скидка, если обучение и проживание оплачивается за год вперед
+						.institution-content--item
+							h2.h2 Классы
+							p.institution-content-title.flex
+								i.fas.fa-graduation-cap
+								span С 5 По 12
+						.institution-content--item
+							h2.h2 Период обучения
+							p.institution-content-title.flex
+								i.fas.fa-graduation-cap
+								span 12 лет
+						.institution-content--item
+							h2.h2 Фото и видео
+							.institution-photo.flex.flex-wrap.justify-content-between
+								.institution-photo--item
+									img(src="https://via.placeholder.com/262x147")
+								.institution-photo--item
+									img(src="https://via.placeholder.com/262x147")
+								.institution-photo--item
+									img(src="https://via.placeholder.com/262x147")
+								.institution-photo--item
+									img(src="https://via.placeholder.com/262x147")
+								.institution-photo--item
+									img(src="https://via.placeholder.com/262x147")
+								.institution-photo--item
+									img(src="https://via.placeholder.com/262x147")
+
+				.institution-content.institution-content--text.col-12.col-lg-7.flex.flex-column
+					.row 
+
+						h2.h2 Специальности
+						.table
+							table
+								tr
+									th степень
+									th название	
+									th тип
+									th стоимость
+									th
+								mixin tr_td(type)
+									tr
+										td Бакалавр
+										td.bold=type
+										td Менеджмент
+										td.bold.text-right € 9,000	
+										td
+											a(href="/specialization_not_paid.html").link-table Подробнее
+								+tr_td('Innovation Management')
+								+tr_td('International Business Management')
+								+tr_td('Entrepreneurship')
+								+tr_td('Marketing Management')
+								+tr_td('Brand Management')
+								+tr_td('Marketing Research')
+								+tr_td('Digital Marketing')
+
+						h2.h2 Описание
+						p.text-title Местоположение:
+						p.text-content Гимназия Бирклехоф расположена на федеральной земле Баден-Вюртемберг в коммуне Хинтерцартен, в живописном месте в заповеднике Шварцвальд, которое является курортной зоной недалеко от Франции и Швейцарии, 25 км от Фрейбурга.
+						p.text-title Учебные программы:
+						p.text-content Бирклехоф – это аккредитованная государством гимназия. Обучение по учебному плану G8, т.е. сдача экзаменов абитур после 12 класса по программе федеральной земли Баден-Вюртемберг.
+						p.text-title Профилирование:
+						p.text-content Гимназия Бирклехоф предлагает три профилирования, которые ученики выбирают в 8 классе: 
+							ol
+								li 1. Естественные науки и техника 
+								li 2. Языки 
+								li 3. Музыка и искусство
+						p В профиле "Естественные науки и техника" особенно талантливые ученики с 9 класса могут принять участие в программе Plus-MINT (математика-информатика-естественные науки-техника), которая представляет ученикам особые возможности для исследований и стипендию. 
+						p Главный учебный предмет – NwT (Naturwissenschaft und Technik), естественные науки и техника.
+						p В "языковом профиле" с 5 класса детей обучают английскому языку, в 6 классе дети выбирают дополнительно латинский или французский язык, с 8 класса дети начинают изучать третий иностранный язык - испанский.
+						
+						p В профиле "Музыка и искусство" особенно талантливые ученики могут сдать всемирно признанный музыкальный экзамен ABRSM. Также школой постоянно поощряется принятие участия в музыкальных соревнованиях. В рамках расширенного музыкального профиля можно выбрать комбинацию предметов музыка, искусство и театр.
+						p В течение последних 2 лет обучения, 11 и 12 классов, ученики готовятся к сдаче экзаменов Абитур не только академически, но и готовятся к научному образу работы – как подготовка к будущей учебе в ВУЗе.
+						p.text-title Иностранные языки:
+						p Предлагаются английский, латинский, французский и испанский языки.
+
+						span.text-expand Подробнее
+							i.fas.fa-angle-down
+	include footer.pug

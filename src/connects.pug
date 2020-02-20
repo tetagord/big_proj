@@ -1,0 +1,134 @@
+extends pug/base
+
+append vars
+	- html.classList.push("page-index")
+	- meta.charset = "utf-8"
+	- meta.description = "Shuledas"
+	- title = "Shuledas"
+	- meta.viewport = "width=device-width, initial-scale=1"
+
+block content 
+	.connects
+		include header_career.pug
+		main.content
+			.container
+				.col-12
+					.row
+						.col-12
+							.row.justify-content-between
+								h2.h2 
+									span.h-title Связи
+										span.h-qty 123
+								.connect-sort.flex.align-self-center
+									p sort by
+									.connect-sort--item
+										p(data-connect-sort="name") name
+										.connect-sort--menu
+											p(data-connect-sort="name") name
+											p(data-connect-sort="surname") surname
+											p(data-connect-sort="city") city
+									.connect-sort--item
+										p(data-connect-sort="name") Conversation date
+										.connect-sort--menu
+											p(data-connect-sort="today") today
+											p(data-connect-sort="month") month
+									.connect-sort--item
+										p(data-connect-sort="status") status
+										.connect-sort--menu
+											p(data-connect-sort="star") star
+											p(data-connect-sort="views ") views
+						.connects-wrap
+							p.toggle-connect Front-End Developer (Vue.js)
+							.connect-items
+								.connect-item.flex
+									.connect-links
+										a(href="#").connect-profile
+										a(href="#").connect-rate
+										a(href="#").connect-sms
+									.connect-author.flex
+										img(src="images/shuledas_career/connect4.png", alt="")
+										.flex.flex-column.justify-content-center
+											a(href="#").connect-name Christina Cooper
+											a(href="#").connect-mail c.cooper@gmail.com
+									.connect-text.align-self-center
+										span Fwd: Re: Teхзадание: 
+										span  As a business owner or manager, the decision to opt for offshore software development can be difficult. As anyone who has experience knows, there are advantages and
+									.connect-status.flex.flex-column
+										p.connect-date 12:15 27 Jan, 2019
+										p.connect-step.recd На следущий этап
+									.connect-setting 
+										span
+										.connect-menu
+											p item
+											p item
+											p item
+								.connect-item.flex
+									.connect-links
+										a(href="#").connect-profile
+										a(href="#").connect-rate
+										a(href="#").connect-sms
+									.connect-author.flex
+										img(src="images/shuledas_career/connect4.png", alt="")
+										.flex.flex-column.justify-content-center
+											a(href="#").connect-name Christina Cooper
+											a(href="#").connect-mail c.cooper@gmail.com
+									.connect-text.align-self-center
+										span Fwd: Re: Teхзадание: 
+										span  As a business owner or manager, the decision to opt for offshore software development can be difficult. As anyone who has experience knows, there are advantages and
+									.connect-status.flex.flex-column
+										p.connect-date 12:15 27 Jan, 2019
+										p.connect-step.deny Отказано
+									.connect-setting 
+										span
+										.connect-menu
+											p item
+											p item
+											p item
+						.connects-wrap
+							p.toggle-connect Front-End Developer (Vue.js)
+							.connect-items
+								.connect-item.flex
+									.connect-links
+										a(href="#").connect-profile
+										a(href="#").connect-rate
+										a(href="#").connect-sms
+									.connect-author.flex
+										img(src="images/shuledas_career/connect4.png", alt="")
+										.flex.flex-column.justify-content-center
+											a(href="#").connect-name Christina Cooper
+											a(href="#").connect-mail c.cooper@gmail.com
+									.connect-text.align-self-center
+										span Fwd: Re: Teхзадание: 
+										span  As a business owner or manager, the decision to opt for offshore software development can be difficult. As anyone who has experience knows, there are advantages and
+									.connect-status.flex.flex-column
+										p.connect-date 12:15 27 Jan, 2019
+										p.connect-step.recd На следущий этап
+									.connect-setting 
+										span
+										.connect-menu
+											p item
+											p item
+											p item
+								.connect-item.flex
+									.connect-links
+										a(href="#").connect-profile
+										a(href="#").connect-rate
+										a(href="#").connect-sms
+									.connect-author.flex
+										img(src="images/shuledas_career/connect4.png", alt="")
+										.flex.flex-column.justify-content-center
+											a(href="#").connect-name Christina Cooper
+											a(href="#").connect-mail c.cooper@gmail.com
+									.connect-text.align-self-center
+										span Fwd: Re: Teхзадание: 
+										span  As a business owner or manager, the decision to opt for offshore software development can be difficult. As anyone who has experience knows, there are advantages and
+									.connect-status.flex.flex-column
+										p.connect-date 12:15 27 Jan, 2019
+										p.connect-step.deny Отказано
+									.connect-setting 
+										span
+										.connect-menu
+											p item
+											p item
+											p item
+		include footer.pug  

@@ -1,0 +1,94 @@
+extends pug/base
+
+append vars
+	- html.classList.push("page-index")
+	- meta.charset = "utf-8"
+	- meta.description = "Shuledas"
+	- title = "Shuledas"
+	- meta.viewport = "width=device-width, initial-scale=1"
+
+block content
+	include header.pug
+	main
+		.container 
+			.col-12.institution-list--top
+				.row.justify-content-between
+					h1.h1 
+						span.h-title Школы
+							span.h-qty 325
+					a(href="/school_search.html").btn.btn--school.btn--school-color.align-self-center Подобрать
+
+		.institution-wrap.active
+			mixin hei_item
+				.institution-item
+					.container.flex.flex-wrap
+						.school-image
+							img(src="https://via.placeholder.com/225x158")
+						.institution-info
+							h5.institution-title Krüger Internat und Schulen
+							mixin hei_summary(title,data,classn)
+								.list-institution--summary.flex.align-items-center
+									i.fas.fa-graduation-cap
+									span.institution-summary--title=title
+									span(class=classn)=data
+							.list-institution--summary.flex.align-items-center
+								i.fas.fa-graduation-cap
+								span.institution-summary--title Рейтинг
+								.rating.flex
+									span.star.star--full
+										i.fas.fa-star
+									span.star.star--full
+										i.fas.fa-star
+									span.star.star--full
+										i.fas.fa-star
+									span.star.star--full
+										i.fas.fa-star
+									span.star
+										i.fas.fa-star
+							+hei_summary("Описание","Одна из лучших школ-пансионов Германии. Это маленькая уютная школа с семейной атмосферой и сильной учебной программой.", "institution-summary--data")
+							+hei_summary("Расположен","Хольцминден ", "institution-summary--data color-viol")
+						.institution-cost.flex.flex-column.align-items-end
+							p.institution-price.institution-price--margin € 141,660
+							p.institution-duration За все семестры 
+							a(href="/school_not_paid.html").btn.btn--institution.btn--school-color.btn--hei-width Подробнее
+			+hei_item
+			+hei_item 
+			+hei_item 
+			.institution-item.institution-item--chosen
+				.container.flex.flex-wrap 
+					.school-image.school-image--chosen
+						img(src="https://via.placeholder.com/225x225")
+					.institution-info
+						h5.institution-title Schule Birklehof
+						.school-logo
+							img(src="https://via.placeholder.com/47x40")
+						mixin hei_summary(title,data,classn)
+							.list-institution--summary.flex.align-items-center
+								i.fas.fa-graduation-cap
+								span.institution-summary--title=title
+								span(class=classn)=data
+						.list-institution--summary.flex.align-items-center
+							i.fas.fa-graduation-cap
+							span.institution-summary--title Рейтинг
+							.rating.flex
+								span.star.star--full
+									i.fas.fa-star
+								span.star.star--full
+									i.fas.fa-star
+								span.star.star--full
+									i.fas.fa-star
+								span.star.star--full
+									i.fas.fa-star
+								span.star
+									i.fas.fa-star
+						+hei_summary("Описание","Бирклехоф является одной из ведущих школ-пансионов Германии по направлениям: естественные науки и техника, музыка и искусство.", "institution-summary--data")
+						+hei_summary("Расположен","Хинтерцартен ", "institution-summary--data color-viol")
+					.institution-cost.flex.flex-column.align-items-end
+						p.institution-price € 141,660
+						p.institution-duration За все семестры 
+						a(href="/school_paid.html").btn.btn--institution.btn-chosen-color.btn--hei-width Подробнее
+			+hei_item
+
+
+
+	include footer.pug

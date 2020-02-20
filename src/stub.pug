@@ -1,0 +1,82 @@
+extends pug/base
+
+append vars
+	- html.classList.push("page-index")
+	- meta.charset = "utf-8"
+	- meta.description = "Shuledas"
+	- title = "Shuledas"
+	- meta.viewport = "width=device-width, initial-scale=1"
+
+block content
+	.stub
+		header.header
+			.container  
+				.col-12
+					.row.justify-content-center
+						h1.h1 Schuledas
+		main
+			.container  
+				.col-12
+					.row
+						h2.h2 In den kommenden Tagen ist es soweit
+						p Unternehmen bekommen auf schuledas.com den Zugang zu einem Markt mit über 270 Millionen Menschen. Hier sind geeignete und engagierte Kandidaten für unteranderem schwer zu besetzende Positionen überdurchschnittlich vorhanden und für Vertrieb und Kooperationen eröffnen sich grosse Chancen.
+
+				.col-12
+					.row
+						h2.h2 Die ersten 100 Unternehmen, die als erste dabei sind, bekommen im Laufe der ersten drei Monate einen besonderen Status und Vorteile:
+			ul.first-ul
+				li 
+					p Werden Sie der erste und Sie werden den suchenden Kandidaten gegenüber zusätzlich hervorgehoben.
+				li 
+					p Profitieren Sie von einem Umfeld, wo zu Beginn ein deutlich geringerer Wettbewerb vorhanden ist.
+				li 
+					p Anhand Ihrer Anforderungen und Bedürfnisse wird schuledas optimiert und Sie gestalten für sich den bestmöglichen Service mit.
+ 
+			.container
+				.col-12
+					.row
+						h2.h2 Hinterlassen Sie Ihre Kontaktdaten und profitieren Sie als Bonuskandidat.
+						form(action="")
+							.field
+								input(type="text" name="mail" placeholder="e-Mail (unbedingt)").field--input
+							.field
+								input(type="text" name="company_name" placeholder="Name des Unternehmens").field--input
+							.field
+								input(type="text" name="charge_name" placeholder="Name des verantwortlichen Mitarbeiters").field--input
+							.field
+								input(type="text" name="position" placeholder="Im welchen Fachbereich suchen Sie?").field--input
+							.field
+								input(type="submit" value="Zu senden").btn
+				.col-12
+					.row
+						h2.h2 Wir spezialisieren uns auf die folgenden Fachbereiche:
+			ul
+				li 
+					p - IT 
+				li 
+					p - Telekommunikation
+				li 
+					p - Engineering & Technical Jobs
+				li 
+					p - Automobile
+				li 
+					p - General Management
+				li 
+					p - R&D, Science & Scientific Research
+				li 
+					p - Health 
+				li 
+					p - Pharma
+				li 
+					p - Media & Information
+				li 
+					p - Design & Architecture
+				li 
+					p - Education 
+								
+		footer.footer
+			.footer-bottom
+				.container 
+					.col-12
+						.row.justify-content-center
+							p.copyright © 2018 Schuledas.

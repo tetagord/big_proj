@@ -1,0 +1,340 @@
+extends pug/base
+
+append vars
+	- html.classList.push("page-index")
+	- meta.charset = "utf-8"
+	- meta.description = "Shuledas"
+	- title = "Shuledas"
+	- meta.viewport = "width=device-width, initial-scale=1"
+block content 
+	.cv
+		include header_career.pug
+ 
+		main
+			.cv-fon
+				img(src="https://via.placeholder.com/1920x400", alt="")
+			.container
+				.row
+					.col-12.col-xl-6.cv-left
+						img(src="https://via.placeholder.com/300x300", alt="").cv-avatar
+						mixin cv_expr
+							.cv-exp.col-12
+								h2.h2 Опыт
+								.cv-content#clone
+									.cv-input
+										label Место работы №
+											span.job-num 1
+										input(type="text" placeholder="Google...")
+										.cv--btn.flex
+											i.fas.fa-minus.remove-exp
+											i.fas.fa-plus.add-exp
+									.cv-input
+										label Должность
+										input(type="text" placeholder="Accountant...")
+									.cv-input
+										label Краткое описание направлений работы, решений и достижений
+										textarea(type="text" placeholder="Design websites and mobile applications…")
+									.cv-periods.flex.flex-wrap
+										.cv-period.flex.flex-wrap
+											p Период работы. От
+
+											.filter-select.js-filter
+												select
+													option(value="1") January
+													option(value="2") February
+													option(value="3") March
+													option(value="4") April
+													option(value="5") May
+													option(value="6") June
+													option(value="7") July
+													option(value="8") August
+													option(value="9") September
+													option(value="10") October
+													option(value="11") November
+													option(value="12") December
+											.filter-select.js-filter
+												select
+													option(value="1") 2018
+													option(value="2") 2018
+													option(value="3") 2018 
+
+										.cv-period.flex.flex-wrap
+											p Период работы. От
+
+											.filter-select.js-filter
+												select
+													option(value="1") January
+													option(value="2") February
+													option(value="3") March
+													option(value="4") April
+													option(value="5") May
+													option(value="6") June
+													option(value="7") July
+													option(value="8") August
+													option(value="9") September
+													option(value="10") October
+													option(value="11") November
+													option(value="12") December
+											.filter-select.js-filter
+												select
+													option(value="1") 2018
+													option(value="2") 2018
+													option(value="3") 2018 
+
+										.cv-radio.flex.flex-column
+											p Продолжаю работать
+											.filter-by.flex.filter-career
+												span.filter-by--title Нет
+												.filter-by--type
+													input(type="checkbox" name="filter-price").filter-by--input
+													span.filter-by--mask
+												span.filter-by--title Да
+						+cv_expr
+					.col-12.col-xl-6.cv-right
+						.cv--item 
+							h2.h2
+								span.h-title Гражданство
+									span.h-qty(title="some title some title some title")
+										i.fas.fa-question-circle
+							.cv-content.m-24
+								p В Европейских компаниях документы обязательны. Вы сможете работать только удаленно, но тогда вы получаете меньше.
+								.cv-input
+									input(type="text" placeholder="Germany...")
+									.cv--btn.flex 
+										i.fas.fa-plus
+
+								.cv-radio.flex.flex-wrap
+									p Есть документы для работы в Евросоюзе
+									.filter-by.flex.filter-career
+										span.filter-by--title Нет
+										.filter-by--type
+											input(type="checkbox" name="filter-price").filter-by--input
+											span.filter-by--mask
+										span.filter-by--title Да
+									//- button.btn.btn--cv.align-self-end Оформить €123 
+
+						.cv--item 
+							h2.h2
+								span.h-title Уровень резюме
+									span.h-qty(title="some title some title some title")
+										i.fas.fa-question-circle
+							.cv-content.single
+								.flex.justsify-content-between.align-items-center
+									span Обычное
+									//- button.btn.btn--cv.align-self-end Оформить €123
+
+						.cv--item 
+							h2.h2 Основные навыки
+							.cv-content 
+								span Экспертные навыки
+								.cv-input
+									input(type="text" placeholder="Введите навыки через запятую...") 
+								
+						.cv--item 
+							h2.h2  Основные данные
+							.cv-content 
+								.cv-input
+									label Полное имя
+									input(type="text" placeholder="Иван Иванов...") 
+								.cv-input
+									label Краткое описание направлений работы, решений и достижений
+									textarea(type="text" placeholder="Consultant UI/UX Architect, Designer who Codes, Product Designer…")
+								.cv-input
+									p Месторасположение
+									input(type="text" placeholder="Cupertino, US (HQ) 1 Apple Park Way…...")
+									.cv--btn.flex
+										i.fas.fa-minus
+										i.fas.fa-plus
+
+						.cv--item.prorities
+							h2.h2 Приоритеты в типе работы
+
+							.cv-content
+								.row
+									mixin cv_radio(title)
+										.cv-radio.flex.col-12.col-sm-6.flex-column
+											p=title
+											.filter-by.flex.filter-career
+												span.filter-by--title Нет
+												.filter-by--type
+													input(type="checkbox" name="filter-price").filter-by--input
+													span.filter-by--mask
+												span.filter-by--title Да
+									+cv_radio('Удаленная работа')
+									+cv_radio('Сменная работа') 
+									+cv_radio('Частичная занятость')
+									+cv_radio('Офис')
+									+cv_radio('Полный рабочий день')
+									+cv_radio('Готовность к переезду')
+
+						.cv--item 
+							h2.h2 Должность
+							.cv-content.single
+								.cv-input
+									input(type="text" placeholder="Accountant...") 
+									.cv--btn.flex 
+										i.fas.fa-plus
+
+						.cv--item.m-24
+							h2.h2 Зарплатные ожидания
+							.cv-content.flex.justify-content-between.align-items-end.salary
+								.cv-input.cv-input--small
+									label От
+									input(type="text" placeholder="100,000")
+									.cv--btn.flex 
+										i.fas.fa-plus
+								.cv-input.cv-input--small
+									label До
+									input(type="text" placeholder="110,000...")
+								.cv-input.cv-input--small
+									.cv-period.flex.flex-wrap
+										.filter-select.js-filter
+											select
+												option(value="1") Год
+												option(value="2") Месяц
+												option(value="3") День
+						.cv--item.m-24
+							h2.h2 Навыки
+							.cv-content
+								.cv-input
+									input(type="text" placeholder="Accountant...")
+									.cv--btn.flex 
+										i.fas.fa-plus
+
+
+						.cv--item.m-24
+							h2.h2
+								span.h-title Знание языков
+									span.h-qty(title="some title some title some title")
+										i.fas.fa-question-circle
+							.cv-content.flex.flex-column
+								p В Европе знание языков обязательно. Вы не сможете работать если не знаете язык. Повысьте свой уровень с помощью наших партнеров.
+								.cv-content--line.flex.flex-wrap.justify-content-between
+									.cv-input.cv--part.left 
+										input(type="text" placeholder="English...").input--lang
+									.cv-input.cv--part.right
+										p Уровень
+										.cv-period
+											.filter-select.js-filter
+												select
+													option(value="1") A1
+													option(value="2") B1  
+
+									//- .cv-content--line.flex.justify-content-between.align-items-end
+									.cv-input.cv--part.left 
+										input(type="text" placeholder="Russian...")
+										.cv--btn.flex 
+											i.fas.fa-plus 
+									.cv-input.cv--part.right 
+										.cv-period
+											.filter-select.js-filter
+												select
+													option(value="1") A1
+													option(value="2") B1  
+
+								//- .flex.bd-line.lang-learn.flex.justify-content-between 
+									img(src="https://via.placeholder.com/82x32", alt="") 
+									button.btn.btn--cv Изучать английский
+
+								//- .flex.bd-line.lang-learn.flex.justify-content-between  
+										img(src="https://via.placeholder.com/82x32", alt="") 
+										button.btn.btn--cv Изучать немецкий
+
+						.cv--item 
+							h2.h2
+								span.h-title Образование
+									span.h-qty(title="some title some title some title")
+										i.fas.fa-question-circle
+							.cv-content.flex.flex-column
+								p Большинство работодателей требует разрешение на работу в Европе. Его невозможно получить без высшего образования.
+								.cv-content--line.flex.justify-content-between.align-items-end
+									.cv-input.cv--part.left 
+										label Название вуза
+										input(type="text" placeholder="Harvard...")
+										.cv--btn.flex 
+											i.fas.fa-minus
+											i.fas.fa-plus
+									.cv-input.cv--part.right
+										p Тип
+										.cv-period
+											.filter-select.js-filter
+												select
+													option(value="1") Высшее
+													option(value="2") Неполное
+								.cv-content--line.flex.justify-content-between.align-items-end
+									.cv-input.cv--part
+										p Время обучения. От
+										.cv-period
+											.filter-select.js-filter
+												select
+													option(value="1") 2018
+													option(value="2") 2017
+													option(value="3") 2016
+									.cv-input.cv--part
+										p До
+										.cv-period
+											.filter-select.js-filter
+												select
+													option(value="1") 2018
+													option(value="2") 2017
+													option(value="3") 2016
+									.cv-input.cv--part
+										button.btn.btn--cv Загрузить диплом
+								.cv-radio.flex.flex-wrap
+									p Еще учусь
+									.filter-by.flex.filter-career
+										span.filter-by--title Нет
+										.filter-by--type
+											input(type="checkbox" name="filter-price").filter-by--input
+											span.filter-by--mask
+										span.filter-by--title Да
+
+						.cv--item 
+							h2.h2
+								span.h-title Сертификаты
+									span.h-qty(title="some title some title some title")
+										i.fas.fa-question-circle
+							.cv-content
+								.cv-input
+									label Название
+									input(type="text" placeholder="Certified Accountan...")
+									.cv--btn.flex 
+										i.fas.fa-plus  
+								.flex.justify-content-between
+									.cv-input.cv-input--half
+										label Кем выдан
+										input(type="text" placeholder="Ciursea...")
+										.cv--btn.flex 
+											i.fas.fa-plus  
+									.cv-input.cv-input--half
+										label Тип организации
+										input(type="text" placeholder="Online...")
+										.cv--btn.flex 
+											i.fas.fa-plus  
+								
+								button.btn.btn--cv.btn--cv-right Загрузить сертификат
+						
+		.cv-footer
+			.container
+				.flex.justify-content-between.cv-footer--content
+					.cv-footer--left.flex.align-items-center
+						span Загрузить информацию из
+						.cv-period
+							.filter-select.js-filter
+								select
+									option(value="1") Facebbook
+									option(value="2") OK
+									option(value="3") Google
+
+						button.btn.btn--cv-footer Привязать аккаунт
+					.cv-footer--right.flex.align-items-center
+						span Могут просматривать
+						.cv-period
+							.filter-select.js-filter
+								select
+									option(value="1") Только я(черновик)
+									option(value="2") ВСе 
+
+						button.btn.btn--disable.cv-save Сохранить
+	script(src="js/jquery-3.1.1.min.js")
+

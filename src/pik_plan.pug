@@ -1,0 +1,118 @@
+extends pug/base
+
+append vars
+	- html.classList.push("page-index")
+	- meta.charset = "utf-8"
+	- meta.description = "Shuledas"
+	- title = "Shuledas"
+	- meta.viewport = "width=device-width, initial-scale=1"
+block content 
+	.pikplan 
+		include header_career.pug
+
+		main.container 
+			.row
+				.col-12.col-xl-6.sidebar-plan
+					h2.h2 
+						span.h-title Pick a plan.
+						span.h-title Grow effective with Schuledas.  
+					p Wählen Sie die optimale Lösung und finden Sie einen passenden Kandidaten für Ihr Team.
+					.plan-item
+						.plan-item--input
+							input(type="radio" name="plan-radio" checked="checked")
+							span
+						span Befreit es jetzt
+						span.price € 0
+					.plan-item
+						.plan-item--input
+							input(type="radio" name="plan-radio")
+							span
+						span 1 Monat
+						span.price € 490
+					.plan-item
+						.plan-item--input
+							input(type="radio" name="plan-radio")
+							span
+						span 3 Monat
+						span.price € 1,290
+					.plan-item
+						.plan-item--input
+							input(type="radio" name="plan-radio")
+							span
+						span 6 Monat
+						span.price € 2,290
+
+					.plan-text-item
+						p.plan-title Optional zubuchbare Lösungen:
+						.plan-price
+							.filter-by.flex.filter-career
+								.filter-by--type
+									input(type="checkbox" name="filter-price" data-price="150000" value="150000").filter-by--input
+									span.filter-by--mask
+							span Veröffentlichung eines Artikels zu Ihrem Unternehmen auf der Mediaseite von schuledas
+							.plan-price--checkbox 
+								span(data-price="150000") € 1,500
+						.plan-price
+							.filter-by.flex.filter-career
+								.filter-by--type
+									input(type="checkbox" name="filter-price" data-price="70000" value="70000").filter-by--input
+									span.filter-by--mask
+							span Unterstützung und Monitoring bei der Diplomanerkennung  für Ihren Kandidaten
+							.plan-price--checkbox 
+								span(data-price="70000") € 700
+						.plan-price
+							.filter-by.flex.filter-career
+								.filter-by--type
+									input(type="checkbox" name="filter-price" data-price="70000" value="70000").filter-by--input
+									span.filter-by--mask
+							span Unterstützung und Monitoring beim Einreise- und Visumverfahren für Ihren Kandidaten
+							.plan-price--checkbox 
+								span(data-price="70000") € 700
+						.plan-price
+							.filter-by.flex.filter-career
+								.filter-by--type(style="background-color: rgb(175, 192, 255);")
+									input(type="checkbox" name="filter-price" data-price="000" value="0").filter-by--input
+									span.filter-by--mask
+							span Unterstützung und Monitoring bei der Buchung eines passenden Sprachkurses für Ihren Kandidaten
+							.plan-price--checkbox 
+								span(data-price="000").active € 0
+					button.btn.btn-payed Fortfahren
+
+						
+				.col-12.col-xl-6.content-plan
+					.plan-text-item
+						p.plan-title Für Unternehmen
+						p.plan-summary Schuledas ist die marktführende internationale Media- und Suchplattform für Bildung, Business und Karriere.
+						p Unternehmen aus der DACH-Region haben auf schuledas die Möglichkeit, sich in den baltischen Staaten, GUS-Staaten und Georgien zu präsentieren und nach internationalen Mitarbeitern und/oder Partnern zu suchen.
+					.plan-text-item
+						p.plan-title Wir spezialisieren uns auf die folgenden Fachbereiche:
+						ul.flex.flex-wrap
+							li IT
+							li Telekommunikation
+							li Engineering & Technical Jobs
+							li Automobile
+							li General Management
+							li Health
+							li R&D, Science & Scientific Research
+							li Pharma
+							li Media & Information
+							li Design & Architecture
+							li Education
+						p In diesen Fachbereichen haben hochqualifizierten Fachkräften aus Nicht-EU-Staaten die Möglichkeit und das Recht, mit der Blue Card in der Europäischen Union zu arbeiten und zu bleiben. 
+						p.plan-summary Unternehmen bekommen auf schuledas den Zugang zu einem Markt mit über 270 Millionen Menschen, wo geeignete und engagierte Kandidaten für unteranderem schwer zu besetzende Positionen überdurchschnittlich vorhanden sind und wo sich für Vertrieb und Kooperationen grosse Chancen eröffnen.
+					.plan-text-item
+						p.plan-title Es macht wenig Sinn, sich überwiegend auf die bisherige Suche nach Mitarbeitern oder Partnern innerhalb der bekannten Länder der DACH Region zu beschränken und dort zu suchen, wo:
+						p.plan-tip.two Die meisten nationalen und internationalen Unternehmen untereinander konkurrieren.
+						p.plan-tip.one Großer Mangel an benötigten Kandidaten herrscht.
+						p.plan-tip.three Deutsch- und Englischsprachkurs von spezialisierten Partner Kursanbietern. Preis richtet sich nach der Kursart und der Kursdauer 
+						p.plan-tip.plan-title.four Wie gehe ich vor?
+						ol
+							li 1. Online kaufen und dabei registrieren
+							li 2. Nach Kauf steht Ihr Guthaben in Ihrem Konto sofort zur Verfügung
+							li 3. Nach geeigneten Kandidaten direkt in der Lebenslaufdatenbank suchen
+							li 4. Auserwählte Kandidaten kontaktieren
+
+		include footer.pug  
+	script(src="js/jquery-3.1.1.min.js")
+								
+

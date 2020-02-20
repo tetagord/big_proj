@@ -1,0 +1,72 @@
+extends pug/base
+
+append vars
+	- html.classList.push("page-index")
+	- meta.charset = "utf-8"
+	- meta.description = "Shuledas"
+	- title = "Shuledas"
+	- meta.viewport = "width=device-width, initial-scale=1"
+	<link rel="stylesheet" href="css/slider/jslider.css" type="text/css">
+
+
+block content 
+	.chat-page
+		include header.pug
+		.profile-top
+			.container 
+				.row
+					.flex.col-12
+						.profile-top--img.align-self-end
+							img(src="https://via.placeholder.com/280x280")
+						.profile-top--category.flex.flex-column
+							h1.h1.align-self-end Krüger Internat und Schulen
+							h4.h1-summary Школа-пансион с экономическим уклоном
+						.profile-top--info.flex.justify-content-between
+							p.profile-top--sms 325 сообщения
+							span.profile-top--complain пожаловаться
+								i.fas.fa-shield-alt
+
+		.container.flex
+			.col-12
+				.row
+					.col-3.col-lg-3
+					.col-12.col-lg-9
+						.row
+							.chat.flex.flex-column
+								mixin chats
+									.chat-block.chat--opponent
+										p.chat--info Krüger Internat und Schulen в 
+											span.chat--title 00: 17
+										p.chat--sms Надир, а там действительно могли быть видны звезды, о чем свидетельствует Фукидид выслеживает популяционный индекс, учитывая, что в одном парсеке 3,26 световых года. Апогей, это удалось установить по характеру спектра, отражает астероидный эффективный диаметp. Все известные астероиды имеют прямое движение, при этом эпоха дает центральный восход . Соединение, как бы это ни казалось парадоксальным, ничтожно вызывает параллакс. Hатpиевые атомы предварительно были замечены близко с центром других комет, но магнитное поле дает астероидный перигей.
+									.chat-block
+										p.chat--info Вы в 
+											span.chat--title 00: 20
+										p.chat--sms Скоpость кометы в пеpигелии, как бы это ни казалось парадоксальным, оценивает далекий реликтовый ледник.
+									.chat-block.chat--opponent
+										p.chat--info Krüger Internat und Schulen в 
+											span.chat--title 00: 17
+										p.chat--sms Бесспорно, лимб интуитивно понятен. Экскадрилья, несмотря на внешние воздействия, многопланово выслеживает космический космический мусор.
+									.chat-block.chat--opponent
+										p.chat--info Krüger Internat und Schulen в 
+											span.chat--title 00: 17
+										p.chat--sms
+											a(href="#" download) Filename.jpg
+								+chats 
+								+chats 
+								+chats 
+								+chats 
+
+		.chat-send
+			.container.flex
+				.col-12
+					.row
+						.col-3.col-lg-3
+						.col-12.col-lg-9
+							form#formUpload(method="POST").form-send.flex
+								.file-upload.align-self-center
+									input(type="file")
+									i.fas.fa-cloud-upload-alt
+								input(type="text" placeholder="Начните вводить сообщение")
+								button.btn.btn--save Отправить
+
+		include footer.pug 

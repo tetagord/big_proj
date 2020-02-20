@@ -1,0 +1,71 @@
+extends pug/base
+
+append vars
+	- html.classList.push("page-index")
+	- meta.charset = "utf-8"
+	- meta.description = "Shuledas"
+	- title = "Shuledas"
+	- meta.viewport = "width=device-width, initial-scale=1"
+
+block content
+	.forum-list
+		include header.pug
+		main
+			.container  
+				.col-12
+					.row.justify-content-between
+						.node-top
+							h2.h2 Shuledas форумы
+
+			.container 
+				.col-12
+					.row
+						.forum-type
+							.forum-type--title.flex.justify-content-between
+								h3 
+									a(href="/forum-education.html") Образование
+								.flex
+									p Темы
+									p Сообщения
+							mixin forum_type
+								.forum-type--item.flex.justify-content-between 
+									.forum-type--left.flex.align-items-center.flex-wrap
+										img(src="https://via.placeholder.com/64x64", alt="")
+										div.align-self-start
+											a(href="/forum-schools.html") Форум о школах-пансионах
+											p Пример oписания форума
+									.forum-type--center
+										span Недавние Темы
+											i.fas.fa-arrow-circle-down
+										.forum-type--themes
+											.forum-type--theme.flex
+												i.fas.fa-map-pin
+												div
+													p This concept has navigated right into my heart
+													p От 
+														a(href="#") Артур Балу
+														| , 5 дней назад
+											.forum-type--theme.flex
+												i.fas.fa-lock
+												div
+													p My 35 year old daughter rates this shot very cool m8
+													p От 
+														a(href="#").moder  Админ Васильевич Солнечный
+														| , 5 дней назад
+									.forum-type--right.flex.justify-content-between
+										p 2
+										p 8
+							+forum_type
+							+forum_type
+							+forum_type 
+							
+						.forum-type
+							.forum-type--title.flex.justify-content-between
+								h3
+									a(href="/forum-training.html") Воспитание
+								.flex
+									p Темы
+									p Сообщения 
+							+forum_type
+						
+		include footer.pug

@@ -1,0 +1,203 @@
+extends pug/base
+
+append vars
+	- html.classList.push("page-index")
+	- meta.charset = "utf-8"
+	- meta.description = "Shuledas"
+	- title = "Shuledas"
+	- meta.viewport = "width=device-width, initial-scale=1"
+
+block content
+	include header.pug
+	main
+		.video-block.flex
+			.container
+				.row.align-items-center
+					a(href="https://www.youtube.com/embed/668nUCeBHyY" target="_blank").video-mobile-btn
+						i.fas.fa-play-circle
+					.video
+						video( autoplay="" loop="" muted="" )#mainVideo
+							source(src="video/1.mp4" type="video/mp4")
+						//- iframe(src="https://www.youtube.com/embed/668nUCeBHyY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen)
+						.video-controls.flex.justify-content-between
+							button.play#btnPlayPause 
+								i.far.fa-pause-circle
+							div
+								button.mute#btnMute 
+									i.fas.fa-volume-up
+								button.fullscreen#btnFullScreen
+									i.fas.fa-arrows-alt
+					.close-btn
+						.close-btn--item.close-btn--left
+						.close-btn--item.close-btn--right
+
+		.container
+			.col-12.join
+				.row
+					.main-title
+						h1.h1 Для тех, кто завтра изменит мир
+						p.join-summary Сообщество для поиска лучших школ‑пансионов и вузов Германии
+					button.btn.btn--main Присоедениться 
+					.col-12.app-btns.flex
+						.row
+							a(href="#").app-btn.app-store
+							a(href="#").app-btn.google-play
+							a(href="#").app-btn.windows-store
+
+		.adv
+			.container
+				.row
+					.col-12
+						h2.h2 Не пропустите 
+						.row.justify
+							mixin adv_item(title)
+								.adv-item.col-12.col-sm-6.col-md-4.col-lg-3 
+										a(href="/post.html")
+										img(src="https://via.placeholder.com/260x260")
+										p.adv-item--title=title
+							+adv_item("Лучшие школы-пансионы Германии")
+							+adv_item("Schule Birklehof Школа-пансион")
+							+adv_item("Louisenlund Школа-пансион")
+							+adv_item("Минимальный пакет документов для обучения в Европе")
+
+
+
+
+		.container 
+			.col-12.articles.flex.flex-wrap
+				.main-article--top.flex.justify-content-between.align-items-center
+					h2.h2 Статьи
+					a(href="/articles.html").btn--forum Больше статей
+						i.fas.fa-arrow-circle-right
+				.article--items.flex.flex-wrap
+					mixin article
+						.article--item.main-article--item.col-12.col-md-6.col-lg-3
+							.row.flex-nowrap
+								.article--img 
+									img(src="https://via.placeholder.com/72x72" data-progressive="https://via.placeholder.com/72x72")
+								.article--content 
+									span.article--name Заголовок динною до 92 символов может поместиться 3 строчки
+									p.article--date 27 янв 2018
+								a(href="/post.html").link-mask
+					+article
+					+article
+					+article
+					+article
+					+article
+					+article
+					+article
+					+article
+					
+		.block-line
+
+		.container 
+			.col-12.articles.flex.flex-wrap
+				.main-article--top.flex.justify-content-between.align-items-center
+					h2.h2 Мнения
+					a(href="/opinion.html").btn--forum Больше статей
+						i.fas.fa-arrow-circle-right
+				mixin article(title)
+					.meaining--item.main-article--item.col-12.col-md-6.col-lg-3.align-self-center
+						.row.flex-nowrap.align-items-center
+							.meaining--img 
+								img(src="https://via.placeholder.com/72x72" data-progressive="https://via.placeholder.com/72x72")
+							.meaining--content 
+								span.meaining--title=title
+								p.meaining--name Иван Иванов
+								p.meaining--position Преподователь МГУ
+							a(href="/articles.html").link-mask
+				+article("Заголовок динною до 92 символов может поместиться 3 строчки")
+				+article("Короткий заголовок")
+				+article("Короткий заголовок")
+				+article("Заголовок динною до 92 символов может поместиться 3 строчки")
+		.block-line
+
+		
+		.container 
+			.scools 
+				.institution-top.flex.justify-content-between.align-items-center
+					h2.h2 Школы-пансионы Германии
+					a(href="/school_list.html").btn.btn--institution.btn--school-color.btn--institution-width Найти школы
+				.institution.flex
+					mixin school
+						.institution-item.col-12.col-md-6.col-lg-4
+							.institution-img
+								img(src="https://via.placeholder.com/373x280" data-progressive="https://www.lifecell.ua/uploads/cache/0e/7f/0e7fd620256563e8c830c5dc5347af83.jpg")
+							h3.institution-name Internat Solling
+							p.institution-summary школа-пансион
+							p.institution-descr.school-descr--mask Уютная школа-пансион, с мягкой программой интегра-ции и сильной программой обучения.Уютная школа-пансион, с мягкой программой интегра-ции и сильной программой обучения.
+							span.link Подробнее о школе
+								i.fas.fa-link
+							a(href="/school_not_paid.html").link-mask
+					+school
+					+school
+					+school
+					+school
+					//- .institution-item--part
+						.institution-item
+							.institution-img 
+								img(src="https://via.placeholder.com/373x280" data-progressive="https://via.placeholder.com/373x280")
+							h3.institution-name Internat Solling
+							p.institution-summary школа-пансион
+							p.institution-descr Уютная школа-пансион, с мягкой программой интегра-ции и сильной программой обучения.Уютная школа-пан программой интегра-ции и сильной программой обучения.
+							span.link.institution-link Подробнее о школе
+								i.fas.fa-link
+							a(href="/school_not_paid.html").link-mask
+		.block-line
+
+		.container 
+			.heis 
+				.institution-top.flex.justify-content-between.align-items-center
+					h2.h2 Вузы Германии
+					a(href="/universities_list.html").btn.btn--institution.btn--hei-color.btn--institution-width Найти вузы
+				.institution.flex
+					mixin hei
+						.institution-item.col-12.col-md-6.col-lg-4
+							.institution-img 
+								img(src="https://via.placeholder.com/373x280" data-progressive="https://via.placeholder.com/373x280")
+							h3.institution-name Internat Solling
+							p.institution-summary вуз-пансион
+							p.institution-descr Уютная вуз-пансион, с мягкой программой интегра-ции и сильной программой обучения.Уютная школа-пан программой интегра-ции и сильной программой обучения.
+							span.link.institution-link Информации об университете
+								i.fas.fa-link
+							a(href="/university_not_paid.html").link-mask
+					+hei
+					+hei
+					+hei
+					.institution-item--part
+						.institution-item
+							.institution-img 
+								img(src="https://via.placeholder.com/373x280" data-progressive="https://via.placeholder.com/373x280")
+							h3.institution-name Internat Solling
+							p.institution-summary вуз-пансион
+							p.institution-descr Уютная вуз-пансион, с мягкой программой интегра-ции и сильной программой обучения.Уютная школа-пан программой интегра-ции и сильной программой обучения.
+							span.link.institution-link Информации об университете
+								i.fas.fa-link
+							a(href="/university_not_paid.html").link-mask
+		.block-line
+
+		.container 
+			.col-12.forum.flex.flex-wrap
+					.forum-top.flex.justify-content-between.align-items-center
+						h2.h2 Форум
+						a(href="#").btn--forum Перейти на форум
+							i.fas.fa-arrow-circle-right
+					mixin forum
+						.forum-item.col-12.col-md-6.col-lg-4
+							.row.flex-nowrap
+								.forum-img 
+									img(src="https://via.placeholder.com/140x140" data-progressive="https://via.placeholder.com/140x140")
+									span.forum-title Форум
+								.forum-content.flex.flex-column
+									h3.forum-name Заголовок длинною до 92 символов может поместиться 3 строчки
+									span.forum-comments 324
+										i.fas.fa-comment-alt
+									span.link.forum-link Пример ссылки
+										i.fas.fa-link
+							a(href="#").link-mask
+					+forum
+					+forum
+					+forum
+	include footer.pug
+	
+	

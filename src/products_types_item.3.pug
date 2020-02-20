@@ -1,0 +1,95 @@
+extends pug/base
+
+append vars
+	- html.classList.push("page-index")
+	- meta.charset = "utf-8"
+	- meta.description = "Shuledas"
+	- title = "Shuledas"
+	- meta.viewport = "width=device-width, initial-scale=1"
+	<link rel="stylesheet" href="css/slider/jslider.css" type="text/css">
+
+block content 
+	include header.pug
+	main.content 
+		.product-banner 
+			.product-banner-content
+				h2 Finden Sie Kandidaten für Ihr Team, dort wo sie 
+
+			img(src="images/type-bg2.jpg", alt="")
+			.container.product-types-btn.flex
+				<a class="btn btn--candidates-relative" href="https://www.schuledas.com/job/ru/search/resume">Kandidaten finden</a>
+				<a class="btn btn--candidates-relative" style="background: #29B8A4;" href="https://www.schuledas.com/job/ru/employer/services">Unsere produkte</a>
+		 
+		.container.services-item
+			.col-12
+				.row
+					.col-12
+						h2.h2 Stellenanzeigen via E-Mail an Ihre Zielgruppe
+					.col-12
+						.services-item-descr
+							h3 Stellenanzeige via E-Mail an Ihre Zielgruppe
+							p Mit unserem effektiven und beliebten Newsletter erreichen wir die passende Zielgruppe gemäß Ihren Anforderungen. Der Kunde übermitteln Schuledas konkrete Stellenausschreibungen und Schuledas integriert diese geschickt in das E-Mail Marketing.  In dieser Leistung der Schuledas ist folgendes enthalten:
+							p a. Auswertung der vom Kunden übermittelten Stellenanzeigen/Stellenprofile.
+							p b. Auswahl der passenden Kandidaten in unserer Datenbank gemäß der vom Kunden übermittelten Stellenanzeigen/Stellenprofile.
+							p c. Vorbereitung von geeigneten Texten zur E-Mail-Akquise der passenden Kandidaten und zur Vorbereitung dieser auf die vom Kunden übermittelten Stellenanzeigen/Stellenprofile
+					.col-12.services-item-plan
+
+						  
+						.plan-item
+							.plan-item--input
+								input(type="radio" name="plan-radio")
+								span
+							span 1 Monat
+							span.price € 490
+						.plan-item
+							.plan-item--input
+								input(type="radio" name="plan-radio")
+								span
+							span 3 Monat
+							span.price € 1,290
+						.plan-item
+							.plan-item--input
+								input(type="radio" name="plan-radio")
+								span
+							span 6 Monat
+							span.price € 2,290
+
+		.block-line
+		.container
+			.col-12
+				.row.justify-content-center
+					.col-12
+						h2.h2 Choose another plan 
+					mixin benefit_item(summary,title,descr,icon,link)
+						.col-12.col-md-6.col-xl-3
+							.benefit-item
+								a(href=link) 
+								p.benefit--title=summary 
+							 
+								//- img(src=icon, alt="").benefit--icon
+								.btn Подробнее
+					mixin benefit_item(summary,link,image)
+						.col-12.col-md-6.col-xl-3
+							.product-types-item
+								a(href=link)
+								img(src=image)
+								//- p.benefit--summary=summary
+								//- p.benefit--title=title
+								//- p.benefit--descr=descr
+								//- img(src=icon, alt="").benefit--icon
+								//- p.benefit--summary
+								p.benefit--title=summary
+								//- p.benefit--descr=descr
+			 
+								//- img(src=icon, alt="").benefit--icon
+								.btn Подробнее
+					+benefit_item(  'Stellenanzeige veröffentlichen', 
+									'/products_types_item.html',
+									'images/type.jpg')
+					+benefit_item(  'Zugang zur Bewerberdatenbank', 
+									'/products_types_item.1.html',
+									'images/type1.jpg')
+					+benefit_item(  'Individuelle Leistungen', 
+									'/products_types_item.2.html',
+									'images/type2.jpg') 
+	include footer.pug

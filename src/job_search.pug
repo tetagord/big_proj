@@ -1,0 +1,137 @@
+extends pug/base
+
+append vars
+	- html.classList.push("page-index")
+	- meta.charset = "utf-8"
+	- meta.description = "Shuledas"
+	- title = "Shuledas"
+	- meta.viewport = "width=device-width, initial-scale=1"
+block content 
+	.job-search
+		include header_career.pug
+
+		main 
+			.container
+				.row
+					.col-12.col-lg-7.col-xl-4.job-search--sidebar
+						h2.h2 
+							span.h-title Поиск кандидатов
+								span.h-qty 325 
+						mixin candidate_item(title,placeholder)
+							.candidate-input
+								p=title
+								input(type="text" placeholder=placeholder)
+						+candidate_item('Название должности', 'Designer, Product Designer …')
+						.candidate-input
+							p Месторасположение
+							.filter-select
+								select
+									option(value="3") Не выбрано...
+									option(value="3") Munich, Germany
+									option(value="2") Munich, Germany
+
+						.candidate-input
+							p Количество лет опыта
+							.filter-select
+								select
+									option(value="3") Не выбрано...
+									option(value="2") 0-1
+									option(value="2") 1-2
+						+candidate_item('Обязательные навыки', 'Указывайте через запятую …')
+
+						.candidate-salary
+							p Ожидаемя зарплата
+							.flex.justify-content-between.candidate-salary--info
+								.salary-durat
+									p(data-salary="year") В год
+									ul
+										li(data-salary="year") В год
+										li(data-salary="month") В месяц
+										li(data-salary="week") В неделю
+
+								p.slary--price-filter(data-price-filter="0") По убыванию
+							.flter-price
+								input(type="slider" name="price" value="5000;50000" )#Slider2
+
+						.candidate-radio
+							p Документы для работы в Европе
+							.filter-by.flex.align-self-center.filter-career
+								span.filter-by--title Нет
+								.filter-by--type
+									input(type="checkbox" name="filter-price").filter-by--input
+									span.filter-by--mask
+								span.filter-by--title Да
+						.candidate-radio
+							p Удаленная работа
+							.filter-by.flex.align-self-center.filter-career
+								span.filter-by--title Нет
+								.filter-by--type
+									input(type="checkbox" name="filter-price").filter-by--input
+									span.filter-by--mask
+								span.filter-by--title Да 
+						.candidate-radio
+							p Готовность к переезду
+							.filter-by.flex.align-self-center.filter-career
+								span.filter-by--title Нет
+								.filter-by--type
+									input(type="checkbox" name="filter-price").filter-by--input
+									span.filter-by--mask
+								span.filter-by--title Да
+						.candidate-btns
+							button.btn Искать
+							button.btn--clear Очистить фильтры
+							
+					.col-12.col-xl-8.job-search--content
+						.search-tags.flex.flex-wrap
+							p.search-tag IT and Telekommunikation
+							p.search-tag Engineering & Technical Jobs
+							p.search-tag General Management
+							p.search-tag R&D, Science & Scientific Research
+							p.search-tag Health & Medicine
+							p.search-tag Media & Information
+							p.search-tag Design & Architecture
+							p.search-tag Design & Architecture
+							p.search-tag Education 
+						.search-result.flex
+							img(src="images/shuledas_career/avatar.png")
+							.search-result--content
+								p.name Viktor Mayorov
+								p Consultant UI/UX Architect, Designer who Codes, Product Designer
+								.cv-person.flex.flex-column
+									.cv-person--info.location
+										p локации
+										p.info Cupertino, US (HQ) 1 Apple Park Way
+									.cv-person--info.salary
+										p Зарплатные ожидания  в год
+										p.info €100,000 – €130,000
+									.cv-person--info.exp
+										p Опыт
+										p.info > 10 лет
+									.cv-person--info.skill
+										p навыки
+										p.info UI/UX, Cinema 4D, Sketch, JIRA, HTML, CSS, Adobe Creative Cloud, Agile (Xp, Scrum), JS
+						.search-result.flex.default
+							img(src="https://via.placeholder.com/80x80")
+							.search-result--content
+								p.name
+								p
+								.cv-person.flex.flex-column
+									.cv-person--info
+										p
+										p.info
+									.cv-person--info
+										p 
+										p.info 
+									.cv-person--info
+										p 
+										p.info 
+									.cv-person--info
+										p
+										p.info 
+		include footer.pug  
+	<script type="text/javascript" src="js/slider/tmpl.js"></script>
+	<script type="text/javascript" src="js/slider/jquery.dependClass-0.1.js"></script>
+	<script type="text/javascript" src="js/slider/draggable-0.1.js"></script>
+	<script type="text/javascript" src="js/slider/jquery.slider.js"></script>
+	<script type="text/javascript" src="js/jquery.sumoselect.min.js"></script>
+		

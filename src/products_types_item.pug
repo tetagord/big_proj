@@ -1,0 +1,118 @@
+extends pug/base
+
+append vars
+	- html.classList.push("page-index")
+	- meta.charset = "utf-8"
+	- meta.description = "Shuledas"
+	- title = "Shuledas"
+	- meta.viewport = "width=device-width, initial-scale=1"
+	<link rel="stylesheet" href="css/slider/jslider.css" type="text/css">
+
+block content 
+	include header.pug
+	main.content   
+		.product-banner 
+			.product-banner-content
+				h2 Finden Sie Kandidaten für Ihr Team, dort wo sie 
+
+			img(src="images/type-bg.jpg", alt="")
+			.container.product-types-btn.flex
+				<a class="btn btn--candidates-relative" href="https://www.schuledas.com/job/ru/search/resume">Kandidaten finden</a>
+				<a class="btn btn--candidates-relative" style="background: #29B8A4;" href="https://www.schuledas.com/job/ru/employer/services">Unsere produkte</a>
+		.container.services-item
+			.col-12
+				.row
+					.col-12
+						h2.h2 Stellenanzeige veröffentlichen 
+					.col-12.services-item-plan.flex
+
+						.col-12.col-md-6.col-lg-4
+							.product-type-item
+								ul.services-item-list
+									li 60 Tage Laufzeit der Präsenz auf der Schuledas Platform, je Stellenanzeige.
+									li Präsenz in allen baltischen Staaten, GUS-Staaten und Georgien über das Portal 
+										a(href="/") www.schuledas.com
+										| .
+									li Präsenz Ihres Unternehmens auf unseren social media Kanälen: Facebook, Instagram und Twitter
+									li Stellenanzeige via E-Mail an Ihre Zielgruppe 
+								<div class="plan-item">
+									<div class="plan-item--input">
+										<input type="radio" name="plan-international" class="plan-radio" data-price="39000" value="39000"><span></span>
+									</div> 
+									<span><b>Stellenanzeige „Silver“</b></span>
+									<span class="price" data-price="39000" data-currency="eur">€390/Stück</span>
+								</div>
+						.col-12.col-md-6.col-lg-4
+							.product-type-item
+								ul.services-item-list
+									li 30 Tage Laufzeit der Präsenz auf der Schuledas Platform, je Stellenanzeige.
+									li Präsenz in allen baltischen Staaten, GUS-Staaten und Georgien über das Portal 
+										a(href="/") www.schuledas.com
+										| .
+									li Präsenz Ihres Unternehmens auf unseren social media Kanälen, Facebook und Instagram.
+									li Stellenanzeige via E-Mail an Ihre Zielgruppe 
+								<div class="plan-item">
+									<div class="plan-item--input">
+										<input type="radio" name="plan-international" class="plan-radio" data-price="79000" value="79000"><span></span>
+									</div>
+									<span><b>Stellenanzeige „Gold“</b></span>
+									<span class="price" data-price="79000" data-currency="eur">€790/Stück</span>
+								</div>
+						.col-12.col-md-6.col-lg-4
+							.product-type-item
+								ul.services-item-list
+									li 30 Tage Laufzeit der Präsenz auf der Schuledas Platform, je Stellenanzeige.
+									li Präsenz in allen baltischen Staaten, GUS-Staaten und Georgien über das Portal 
+										a(href="/") www.schuledas.com
+										| .
+								<div class="plan-item">
+									<div class="plan-item--input">
+										<input type="radio" name="plan-international" class="plan-radio" data-price="39000" value="39000"><span></span>
+									</div>
+									<span><b>Stellenanzeige „Silver“</b></span>
+									<span class="price" data-price="39000" data-currency="eur">€390/Stück</span>
+								</div>
+				.container.anfragen-block
+					.row.align-items-center.flex-column
+						.btn-details-wrap
+							.btn Anfragen
+
+		.block-line
+		.container
+			.col-12
+				.row.justify-content-center
+					.col-12
+						h2.h2 Choose another plan 
+					mixin benefit_item(summary,title,descr,icon,link)
+						.col-12.col-md-6.col-xl-3
+							.benefit-item
+								a(href=link) 
+								p.benefit--title=summary 
+								 
+								//- img(src=icon, alt="").benefit--icon
+								.btn Подробнее
+					mixin benefit_item(summary,link,image)
+						.col-12.col-md-6.col-xl-3
+							.product-types-item
+								a(href=link)
+								img(src=image)
+								//- p.benefit--summary=summary
+								//- p.benefit--title=title
+								//- p.benefit--descr=descr
+								//- img(src=icon, alt="").benefit--icon
+								//- p.benefit--summary
+								p.benefit--title=summary
+								//- p.benefit--descr=descr
+			 
+								//- img(src=icon, alt="").benefit--icon
+								.btn Подробнее 
+					+benefit_item(  'Zugang zur Bewerberdatenbank', 
+									'/products_types_item.1.html',
+									'images/type1.jpg')
+					+benefit_item(  'Individuelle Leistungen', 
+									'/products_types_item.2.html',
+									'images/type2.jpg')
+					+benefit_item(  'Stellenanzeigen via E-Mail an Ihre Zielgruppe', 
+									'/products_types_item.3.html',
+									'images/type3.jpg')
+	include footer.pug

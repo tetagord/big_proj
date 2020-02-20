@@ -1,0 +1,91 @@
+extends pug/base
+
+append vars
+	- html.classList.push("page-index")
+	- meta.charset = "utf-8"
+	- meta.description = "Shuledas"
+	- title = "Shuledas"
+	- meta.viewport = "width=device-width, initial-scale=1"
+
+block content
+	include header.pug
+	main
+		.node-top.flex
+			.node-top--img.flex
+				img(src="https://via.placeholder.com/607x607") 
+			.node-top--info.flex.flex-column
+				.node-top--content
+					.post-title
+						.rating.rating--small.flex
+							span.star.star--full
+								i.fas.fa-star
+							span.star.star--full
+								i.fas.fa-star
+							span.star.star--full
+								i.fas.fa-star
+							span.star.star--full
+								i.fas.fa-star
+							span.star
+								i.fas.fa-star
+						h1.h1 Schule Birklehof
+						h4.h1-summary Бирклехоф – одна из ведущих школ-пансионов Германии по направлениям: естественные науки и техника, музыка и искусство.
+						a(href="#").link.institution-link https://birklehof.online/
+							i.fas.fa-link
+
+				.node-join.flex.justify-content-between
+					.insitution-page-cost
+						p.institution-period За год
+						p.institution-price € 141,660
+
+					button.btn.btn--school.btn--school-color.align-self-center Спросить в чате
+		.container
+			.row
+				
+				.institution-btns.institution-btns--viol.institution-controls-mobile
+					button.institution-btn.institution-btn--viol(data-institution-btn="description").active Описание
+					button.institution-btn.institution-btn--viol(data-institution-btn="details") Детали 
+				.institution-content.col-12.col-lg-5.flex.flex-column(data-institution-content="details")
+					.row
+						h2.h2 Фото
+						.institution-photo.flex.flex-wrap.justify-content-between
+							.institution-photo--item
+								img(src="https://via.placeholder.com/262x147")
+							.institution-photo--item
+								img(src="https://via.placeholder.com/262x147")
+							.institution-photo--item
+								img(src="https://via.placeholder.com/262x147")
+							.institution-photo--item
+								img(src="https://via.placeholder.com/262x147")
+							.institution-photo--item
+								img(src="https://via.placeholder.com/262x147")
+							.institution-photo--item
+								img(src="https://via.placeholder.com/262x147")
+
+				.institution-content.institution-content--text.col-12.col-lg-7.flex.flex-column(data-institution-content="description").active
+					.row
+						h2.h2 Описание школы
+
+						p.text-title Местоположение:
+						p.text-content Гимназия Бирклехоф расположена на федеральной земле Баден-Вюртемберг в коммуне Хинтерцартен, в живописном месте в заповеднике Шварцвальд, которое является курортной зоной недалеко от Франции и Швейцарии, 25 км от Фрейбурга.
+						p.text-title Учебные программы:
+						p.text-content Бирклехоф – это аккредитованная государством гимназия. Обучение по учебному плану G8, т.е. сдача экзаменов абитур после 12 класса по программе федеральной земли Баден-Вюртемберг.
+						p.text-title Профилирование:
+						p.text-content Гимназия Бирклехоф предлагает три профилирования, которые ученики выбирают в 8 классе: 
+							ol
+								li 1. Естественные науки и техника 
+								li 2. Языки 
+								li 3. Музыка и искусство
+						p В профиле "Естественные науки и техника" особенно талантливые ученики с 9 класса могут принять участие в программе Plus-MINT (математика-информатика-естественные науки-техника), которая представляет ученикам особые возможности для исследований и стипендию. 
+						p Главный учебный предмет – NwT (Naturwissenschaft und Technik), естественные науки и техника.
+						p В "языковом профиле" с 5 класса детей обучают английскому языку, в 6 классе дети выбирают дополнительно латинский или французский язык, с 8 класса дети начинают изучать третий иностранный язык - испанский.
+						
+						p В профиле "Музыка и искусство" особенно талантливые ученики могут сдать всемирно признанный музыкальный экзамен ABRSM. Также школой постоянно поощряется принятие участия в музыкальных соревнованиях. В рамках расширенного музыкального профиля можно выбрать комбинацию предметов музыка, искусство и театр.
+						p В течение последних 2 лет обучения, 11 и 12 классов, ученики готовятся к сдаче экзаменов Абитур не только академически, но и готовятся к научному образу работы – как подготовка к будущей учебе в ВУЗе.
+						p.text-title Иностранные языки:
+						p Предлагаются английский, латинский, французский и испанский языки.
+
+						span.text-expand Подробнее
+							i.fas.fa-angle-down
+
+
+	include footer.pug

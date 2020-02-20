@@ -1,0 +1,99 @@
+extends pug/base
+
+append vars
+	- html.classList.push("page-index")
+	- meta.charset = "utf-8"
+	- meta.description = "Shuledas"
+	- title = "Shuledas"
+	- meta.viewport = "width=device-width, initial-scale=1"
+	<link rel="stylesheet" href="css/slider/jslider.css" type="text/css">
+block content
+	.hei_search
+		include header.pug
+		main.flex.flex-wrap.flex-column
+			.filter-hei
+				.container 
+					.col-12.institution-list--top
+						.row.justify-content-between
+							h1.h1 
+								span.h-title Вузы
+									span.h-qty 325
+							a(href="#").btn--forum.btn--filter.btn--green.align-self-center Закрыть фильтры
+									i.fas.fa-times-circle
+
+				.container
+					.filter.flex.flex-wrap.flex-column
+						.filter-line.flex
+							input(type="text" autofocus placeholder="Введите поисковый запрос").institution-filter-input.institution-filter-input--hei.filter-active.js-filter
+							.filter-select.js-filter
+								select
+									option(value="3") Язык обучения
+									option(value="2") Цена
+									option(value="1") Продолжительность обучения
+							.filter-select.js-filter
+								select
+									option(value="3") Академическая степень
+									option(value="2") Цена
+									option(value="1") Академическая степень
+
+						.filter-line.flex
+							.flter-price
+								.filter-price--top.flex.justify-content-between
+									span.filter-price--title Стоимость
+									span.filter-price--title.filter-price--cost 
+										span По убыванию
+										i.fas.fa-dollar-sign
+								inutut(type="slider" name="price" value="5000;50000" )#Slider2
+							.filter-select.js-filter
+								select
+									option(value="3") Тип специальности
+									option(value="2") Цена
+									option(value="1") Продолжительность обучения
+							button.btn.btn--search.btn--hei-color.align-self-start Показать
+ 
+			.container.flex.flex-wrap
+				.institution-btns.institution-btns--brightcyan.flex
+					button.institution-btn.institution-btn--brightcyan(data-search-btn="list").active Список
+					button.institution-btn.institution-btn--brightcyan(data-search-btn="map") Карта
+						
+			.institution-wrap(data-search-content="list").active
+				mixin hei_item
+					.institution-item 
+						.container 
+							.col-12
+								.row
+									.hei-image
+										img(src="https://via.placeholder.com/225x225")
+									.institution-info
+										h5.institution-title Bachelor of Business Administration in Hospitality Management (со специализацией)
+										mixin hei_summary(title,data,classn)
+											.list-institution--summary.flex.align-items-center
+												i.fas.fa-graduation-cap
+												span.institution-summary--title=title
+												span(class=classn)=data
+										+hei_summary("Университет","Hotel Institute Montreux – HIM", "institution-summary--data color-lazure")
+										+hei_summary("Срок обучения","7 семестров", "institution-summary--data")
+										+hei_summary("Степень","Бакалавр", "institution-summary--data")
+										+hei_summary("Тип специальности","Менеджмент", "institution-summary--data")
+										+hei_summary("Расположен","1820 Montreux", "institution-summary--data color-lazure")
+									.institution-cost.flex.flex-column.align-items-end
+										p.institution-price.institution-price--margin € 141,660
+										p.institution-duration За все семестры 
+										a(href="/university_not_paid.html").btn.btn--institution.btn-hei-color.btn--hei-width Подробнее
+				+hei_item
+				+hei_item
+				+hei_item
+				+hei_item
+			.institution-wrap.map(data-search-content="map")
+				img(src="https://via.placeholder.com/1000x620?text=map")
+		include footer.pug
+	//- bin/jquery.slider.min.js
+	//- <script type="text/javascript" src="js/slider/jquery-1.7.1.js"></script>
+	//- <script type="text/javascript" src="js/slider/jshashtable-2.1_src.js"></script>
+	//- <script type="text/javascript" src="js/slider/jquery.numberformatter-1.2.3.js"></script>
+	<script type="text/javascript" src="js/slider/tmpl.js"></script>
+	<script type="text/javascript" src="js/slider/jquery.dependClass-0.1.js"></script>
+	<script type="text/javascript" src="js/slider/draggable-0.1.js"></script>
+	<script type="text/javascript" src="js/slider/jquery.slider.js"></script>
+	<script type="text/javascript">jQuery("#Slider2").slider({ from: 5000, to: 150000, heterogeneity: ['50/50000'], step: 1000, dimension: '&nbsp;€' });</script>
+		

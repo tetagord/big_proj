@@ -1,0 +1,63 @@
+extends pug/base
+
+append vars
+	- html.classList.push("page-index")
+	- meta.charset = "utf-8"
+	- meta.description = "Shuledas"
+	- title = "Shuledas"
+	- meta.viewport = "width=device-width, initial-scale=1"
+	<link rel="stylesheet" href="css/slider/jslider.css" type="text/css">
+
+
+block content 
+	.info-page
+		include header.pug
+		.container
+			.row 
+				.col-12.col-md-4.sidebar-nav
+					mixin sidebar_nav_item(title, classn)
+						a(href="#" class=classn).sidebar-nav--link=title
+					a(href="/about_us.html").sidebar-nav--link О нас
+					+sidebar_nav_item('Cвяжитесь с нами', 'active')
+					+sidebar_nav_item('Условия предоставления услуг')
+					+sidebar_nav_item('Политика конфеденциальности')
+					+sidebar_nav_item('Общие условия и положения компании')
+					+sidebar_nav_item('Политика в отношении файлов cookie')
+					+sidebar_nav_item('Политика в отношении интеллектиуальной собственности')
+					+sidebar_nav_item('Политика недискриминации Schuledas')
+				.col-1.hide-in-992
+				.col-12.col-md-8.col-lg-6.info-content
+					h1.h1 Свяжитесь с нами
+					p.info-page--subtitle Есть вопрос?
+
+					p.info-page--parag Вы можете найти ответы на часто задаваемые вопросы или, если хотите,  вы также можете напрямую связаться с нами:
+
+					h2.h2 Свяжитесь с нами
+					.info-contact
+						mixin contact_input(label,placeholder,classn)
+							.field.flex.flex-column(class=classn)
+								label.field--label=label
+								input.field--input(type="text" placeholder=placeholder) 
+						+contact_input('Имя','Имя','field--first')
+						+contact_input('Почта','Почта')
+						.field.flex.flex-column
+							label.field--label Предмет
+							.filter-select.js-filter.info-select
+								select 
+									option(value="1") Карьера
+									option(value="2") Бизнес
+									option(value="3") Женский
+									option(value="4") Развитие
+									option(value="5") PR
+									option(value="6") Другое
+						.field.flex.flex-column
+							label.field--label Сообщение
+							textarea(name="textarea" placeholder='Сообщение').field--input
+
+				.col-12.col-lg-11.info-btns
+					.row.justify-content-end
+						button.btn.btn--save.btn--save-tranparent Отменить
+						button.btn.btn--save Сохранить
+						
+		include footer.pug 
+

@@ -1,0 +1,48 @@
+extends pug/base
+
+append vars
+	- html.classList.push("page-index")
+	- meta.charset = "utf-8"
+	- meta.description = "Shuledas"
+	- title = "Shuledas"
+	- meta.viewport = "width=device-width, initial-scale=1"
+	<link rel="stylesheet" href="css/slider/jslider.css" type="text/css">
+
+block content 
+	include header.pug
+	main.content   
+		.container.benefit
+			.col-12
+				.row
+					.col-12
+						h2.h2 Jetzt passenden Kandidaten finden
+						//- p.block-summary Персональные вакансии от ведущих компаний 🇩🇪 Германии, 🇦🇹 Австрии, 🇨🇭Швейцарии
+					mixin benefit_item(summary,link,image)
+						.col-12.col-md-6.col-xl-3
+							.product-types-item
+								a(href=link)
+								img(src=image)
+								//- p.benefit--summary=summary
+								//- p.benefit--title=title
+								//- p.benefit--descr=descr
+								//- img(src=icon, alt="").benefit--icon
+								//- p.benefit--summary
+								p.benefit--title=summary
+								//- p.benefit--descr=descr
+			 
+								//- img(src=icon, alt="").benefit--icon
+								.btn Подробнее
+					+benefit_item(  'Stellenanzeige veröffentlichen', 
+									'/products_types_item.html',
+									'images/type.jpg')
+					+benefit_item(  'Zugang zur Bewerberdatenbank', 
+									'/products_types_item.1.html',
+									'images/type1.jpg')
+					+benefit_item(  'Individuelle Leistungen', 
+									'/products_types_item.2.html',
+									'images/type2.jpg')
+					+benefit_item(  'Stellenanzeigen via E-Mail an Ihre Zielgruppe', 
+									'/products_types_item.3.html',
+									'images/type3.jpg')
+		.block-line
+	include footer.pug

@@ -1,0 +1,159 @@
+extends pug/base
+
+append vars
+	- html.classList.push("page-index")
+	- meta.charset = "utf-8"
+	- meta.description = "Shuledas"
+	- title = "Shuledas"
+	- meta.viewport = "width=device-width, initial-scale=1"
+	<link rel="stylesheet" href="css/slider/jslider.css" type="text/css">
+
+
+block content 
+	.chat-page
+		include header.pug
+
+		.container.chat-wrap
+			.row
+				.col-12.col-lg-3.chat-sidebar
+					h2.h2 
+						span.h-title Диалоги
+							span.h-qty 122
+
+					.flex.flex-column.chat-persons
+						.chat-persons--wrap
+							mixin chat_person
+								.chat-person--item.flex.flex-wrap
+									img(src="https://via.placeholder.com/40x40").chat-person--img
+									.chat-person--info.flex.justify-content-center.flex-column
+										p.chat-person--name Margaret Kelsey
+										p.chat-person--date 00:17 30 окт 2018
+							+chat_person
+							+chat_person
+							+chat_person
+							+chat_person
+						
+				.col-12.col-lg-9.chat-main
+					.chat-info
+						.chat-info--return-mob
+							i.fas.fa-long-arrow-alt-left.align-self-center
+						h2.h2 
+							span.h-title Margaret Kelsey
+								span.h-qty 325
+							p.chat-status Сейчас в сети
+						span.chat-blocked.align-self-center
+							i.fas.fa-shield-alt 
+					.chat-content
+						p.chat-date
+						.chat.flex.flex-column
+							.chat-fullday.flex.flex-column
+								p.chat-day(data-day="2018 11 7") 07.11
+									.chat-block(data-date="2018 11 7 23 35")
+										p.chat--info Вы в 
+											span.chat--title 12: 20
+										p.chat--sms Скоpость кометы в пеpигелии, как бы это ни казалось парадоксальным, оценивает далекий реликтовый ледник.
+									.chat-block(data-date="2018 11 7 23 35")
+										p.chat--info Вы в 
+											span.chat--title 15: 20
+										p.chat--sms Скоpость кометы в пеpигелии, как бы это ни казалось парадоксальным, оценивает далекий реликтовый ледник.
+									.chat-block.chat--opponent(data-date="2018 11 7 23 35")
+										p.chat--info Krüger Internat und Schulen в 
+											span.chat--title 00: 01
+										p.chat--sms Надир, а там действительно могли быть видны звезды, о чем свидетельствует Фукидид выслеживает популяционный индекс, учитывая, что в одном парсеке 3,26 световых года. Апогей, это удалось установить по характеру спектра, отражает астероидный эффективный диаметp. Все известные астероиды имеют прямое движение, при этом эпоха дает центральный восход . Соединение, как бы это ни казалось парадоксальным, ничтожно вызывает параллакс. Hатpиевые атомы предварительно были замечены близко с центром других комет, но магнитное поле дает астероидный перигей.
+									.chat-block(data-date="2018 11 7 23 35")
+										p.chat--info Вы в 
+											span.chat--title 00: 20
+										p.chat--sms Скоpость кометы в пеpигелии, как бы это ни казалось парадоксальным, оценивает далекий реликтовый ледник.
+
+										p.chat--sms
+											a(href="#" download) Filename.jpg
+
+							.chat-fullday.flex.flex-column
+								p.chat-day(data-day="2018 11 8") 08.11
+									.chat-block(data-date="2018 11 8 23 35")
+										p.chat--info Вы в 
+											span.chat--title 12: 20
+										p.chat--sms Скоpость кометы в пеpигелии, как бы это ни казалось парадоксальным, оценивает далекий реликтовый ледник.
+									.chat-block(data-date="2018 11 8 23 35")
+										p.chat--info Вы в 
+											span.chat--title 15: 20
+										p.chat--sms Скоpость кометы в пеpигелии, как бы это ни казалось парадоксальным, оценивает далекий реликтовый ледник.
+									.chat-block.chat--opponent(data-date="2018 11 8 23 35")
+										p.chat--info Krüger Internat und Schulen в 
+											span.chat--title 00: 01
+										p.chat--sms Надир, а там действительно могли быть видны звезды, о чем свидетельствует Фукидид выслеживает популяционный индекс, учитывая, что в одном парсеке 3,26 световых года. Апогей, это удалось установить по характеру спектра, отражает астероидный эффективный диаметp. Все известные астероиды имеют прямое движение, при этом эпоха дает центральный восход . Соединение, как бы это ни казалось парадоксальным, ничтожно вызывает параллакс. Hатpиевые атомы предварительно были замечены близко с центром других комет, но магнитное поле дает астероидный перигей.
+									.chat-block(data-date="2018 11 8 23 35")
+										p.chat--info Вы в 
+											span.chat--title 00: 20
+										p.chat--sms Скоpость кометы в пеpигелии, как бы это ни казалось парадоксальным, оценивает далекий реликтовый ледник.
+
+							.chat-fullday.flex.flex-column
+								p.chat-day(data-day="2018 11 9") 09.11
+									.chat-block(data-date="2018 11 9 23 35")
+										p.chat--info Вы в 
+											span.chat--title 12: 20
+										p.chat--sms Скоpость кометы в пеpигелии, как бы это ни казалось парадоксальным, оценивает далекий реликтовый ледник.
+									.chat-block(data-date="2018 11 9 23 35")
+										p.chat--info Вы в 
+											span.chat--title 15: 20
+										p.chat--sms Скоpость кометы в пеpигелии, как бы это ни казалось парадоксальным, оценивает далекий реликтовый ледник.
+									.chat-block.chat--opponent(data-date="2018 11 9 23 35")
+										p.chat--info Krüger Internat und Schulen в 
+											span.chat--title 00: 01
+										p.chat--sms Надир, а там действительно могли быть видны звезды, о чем свидетельствует Фукидид выслеживает популяционный индекс, учитывая, что в одном парсеке 3,26 световых года. Апогей, это удалось установить по характеру спектра, отражает астероидный эффективный диаметp. Все известные астероиды имеют прямое движение, при этом эпоха дает центральный восход . Соединение, как бы это ни казалось парадоксальным, ничтожно вызывает параллакс. Hатpиевые атомы предварительно были замечены близко с центром других комет, но магнитное поле дает астероидный перигей.
+									.chat-block(data-date="2018 11 9 23 35")
+										p.chat--info Вы в 
+											span.chat--title 00: 20
+										p.chat--sms Скоpость кометы в пеpигелии, как бы это ни казалось парадоксальным, оценивает далекий реликтовый ледник.
+
+										p.chat--sms
+											a(href="#" download) Filename.jpg
+
+							.chat-fullday.flex.flex-column
+								p.chat-day(data-day="2018 11 10") 10.11
+									.chat-block(data-date="2018 11 9 23 35")
+										p.chat--info Вы в 
+											span.chat--title 12: 20
+										p.chat--sms Скоpость кометы в пеpигелии, как бы это ни казалось парадоксальным, оценивает далекий реликтовый ледник.
+									.chat-block(data-date="2018 11 9 23 35")
+										p.chat--info Вы в 
+											span.chat--title 15: 20
+										p.chat--sms Скоpость кометы в пеpигелии, как бы это ни казалось парадоксальным, оценивает далекий реликтовый ледник.
+									.chat-block.chat--opponent(data-date="2018 11 9 23 35")
+										p.chat--info Krüger Internat und Schulen в 
+											span.chat--title 00: 01
+										p.chat--sms Надир, а там действительно могли быть видны звезды, о чем свидетельствует Фукидид выслеживает популяционный индекс, учитывая, что в одном парсеке 3,26 световых года. Апогей, это удалось установить по характеру спектра, отражает астероидный эффективный диаметp. Все известные астероиды имеют прямое движение, при этом эпоха дает центральный восход . Соединение, как бы это ни казалось парадоксальным, ничтожно вызывает параллакс. Hатpиевые атомы предварительно были замечены близко с центром других комет, но магнитное поле дает астероидный перигей.
+									.chat-block(data-date="2018 11 9 23 35")
+										p.chat--info Вы в 
+											span.chat--title 00: 20
+										p.chat--sms Скоpость кометы в пеpигелии, как бы это ни казалось парадоксальным, оценивает далекий реликтовый ледник.
+
+										p.chat--sms
+											a(href="#" download) Filename.jpg
+							
+
+		.chat-send
+			.container.flex
+				.col-12
+					.row.justify-content-end
+						.col-12.col-lg-9
+							.form-send.flex.flex-wrap
+								P.form-send--sms
+								.file-upload.align-self-center
+									input(type="file")
+									i.fas.fa-cloud-upload-alt
+								input(type="text" placeholder="Начните вводить сообщение")
+								button.btn--send Отправить
+									i.fab.fa-telegram-plane
+		
+		.chat-setting
+			p#chat-quote Цитировать
+			p#chat-edit Редактировать
+			p#chat-delete Удалить
+			p#chat-complaint Пожаловаться
+	<script src="js/jquery-3.1.1.min.js"></script> 
+
+		//- include footer.pug 
+
+		//- https://stackoverflow.com/questions/4495626/making-custom-right-click-context-menus-for-my-web-app
+

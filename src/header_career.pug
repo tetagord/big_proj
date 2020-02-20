@@ -1,0 +1,28 @@
+header.header.header-career
+    .container  
+        .col-12
+            .row.justify-content-between
+                .logo.align-self-center
+                    a(href="/")
+                        img(src="images/logo/logo.png")
+                nav.header-nav.flex
+                    .mobile-toggle
+                        span.mobile-toggle--item
+                        span.mobile-toggle--item
+                        span.mobile-toggle--item
+                    ul.header-nav--ul.flex
+                        mixin nav_link(link, text)
+                            li.header-nav--li
+                                a(href=link).header-nav--link=text 
+                        li.header-nav--li
+                            a(href="/search.html").header-nav--link.header-nav--search Поиск
+                                i.fas.fa-search
+                    button.btn.btn--login.align-self-center Войти
+                    //- button.btn.switch-role Работодатель
+                    .header-user.align-self-center
+                        img(src="https://via.placeholder.com/32x32", alt="")
+                        .header-user--arrow
+                            i.fas.fa-chevron-down
+                            ul
+                                li
+                                    a(href="#").logout exit

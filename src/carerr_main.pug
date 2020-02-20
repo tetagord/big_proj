@@ -1,0 +1,118 @@
+extends pug/base
+
+append vars
+	- html.classList.push("page-index")
+	- meta.charset = "utf-8"
+	- meta.description = "Shuledas"
+	- title = "Shuledas"
+	- meta.viewport = "width=device-width, initial-scale=1"
+	<link rel="stylesheet" href="css/slider/jslider.css" type="text/css">
+
+block content 
+	include header_career.pug
+	main.content
+		//- .main-popup
+			.container
+				.row.align-items-center.justify-content-between
+					p.main-popup--number 4,790
+					span.main-popup--summary 
+						span
+						| Проверенная база сотрудников со знанием языка
+					span.main-popup--close
+						i.fas.fa-times-circle
+		.main-banner
+			.main-slider
+				.slider-item
+					img(src="images/shuledas_career/main_banner.png", alt="")
+					.slider-item--content
+						h2 Finden Sie Kandidaten für Ihr Team, dort wo sie 
+				.slider-item
+					img(src="images/shuledas_career/main_banner.png", alt="")
+					.slider-item--content
+						h2 Finden Sie Kandidaten für Ihr Team, dort wo sie 
+				.slider-item
+					img(src="images/shuledas_career/main_banner.png", alt="")
+					.slider-item--content
+						h2 Finden Sie Kandidaten für Ihr Team, dort wo sie
+
+			.container
+				a(href="/pik_plan.html").btn.btn--candidates Найти сотрудников
+				//- .search-employee.flex.justify-content-between
+					.field.flex.flex-column
+						input.field--input(type="text" placeholder="Должность" name="position-name ")
+					.filter-select.js-filter
+						select
+							option(value="2") Moskow
+							option(value="0") New York, NY
+							option(value="3") Amsterdam
+							option(value="3") Sidney
+					button.btn.bnt--employee 
+						i.fas.fa-users
+						| Найти сотрудника
+					button.btn.bnt--job 
+						i.fas.fa-building
+						| Найти работу
+
+		.container.benefit
+			.col-12
+				.row
+					.col-12
+						h2.h2 Преимущества
+						p.block-summary Персональные вакансии от ведущих компаний 🇩🇪 Германии, 🇦🇹 Австрии, 🇨🇭Швейцарии
+					mixin benefit_item(summary,title,descr,icon)
+						.col-12.col-md-6.col-xl-3
+							.benefit-item
+								p.benefit--summary=summary
+								p.benefit--title=title
+								p.benefit--descr=descr
+								img(src=icon, alt="").benefit--icon
+					+benefit_item(  'для работодателей и соискателей',
+									'Маркетинговые решения',
+									'Решения по продвижению резюме и вакансий. Брендирование, премиум объявления, объявления на сайте и в рекламной сети.',
+									'images/shuledas_career/icon_main (2).png')
+					+benefit_item(  'для работодателей и соискателей',
+									'Поддержка, обучение, подготовка документов',
+									'24/7 on-line поддержка всех пользователей, разрешение споров. Формирование необходимого пакета документов.',
+									'images/shuledas_career/icon_main (3).png')
+					+benefit_item(  'для работодателей',
+									'База данных проверенных резюме',
+									'Проверка данных и знаний соискателей. Дополнительное обучение сотрудников.',
+									'images/shuledas_career/icon_main (4).png')
+					+benefit_item(  'для соискателей',
+									'Работа в ведущих компаниях',
+									'Только платные объявления работодателей. Открытые данные и отзывы о компаниях.',
+									'images/shuledas_career/icon_main (1).png')
+		.block-line
+ 
+		.main-info.flex
+			.main-info--image
+				img(src="images/shuledas_career/main_info (2).png", alt="")
+			.main-info--wrap
+				.main-info--content
+					.main-info--title.flex.justify-content-between.align-items-centr
+						h2.h2 Соискателю
+						a(href="/universities_list.html").btn.btn--institution Присоедениться
+					.main-info--text
+						p Общее слово о преимуществах и особенностях системы для соискателя. Диверсификация бизнеса, вопреки мнению П.Друкера, определяет конструктивный нишевый проект. Направленный маркетинг индуцирует медиаплан. Product placement транслирует коллективный рекламный клаттер. Клиентский спрос методически охватывает креативный повторный контакт, учитывая результат предыдущих медиа-кампаний.
+						.main-info--list
+							ul
+								li.location Возможность подбора удобной локации
+								li.interest Заинтересованность и быстрый отклик работодателя
+								li.approve Курсы и подтверждение знаний 
+		.main-info.flex
+			.main-info--image.right
+				img(src="images/shuledas_career/main_info (1).png", alt="")
+			.main-info--wrap
+				.main-info--content.right
+					.main-info--title.flex.justify-content-between.align-items-centr
+						h2.h2 Работодателю
+						a(href="/universities_list.html").btn.btn--institution Присоедениться
+					.main-info--text
+						p Общее слово о преимуществах и особенностях системы для соискателя. Диверсификация бизнеса, вопреки мнению П.Друкера, определяет конструктивный нишевый проект. Направленный маркетинг индуцирует медиаплан. Product placement транслирует коллективный рекламный клаттер. Клиентский спрос методически охватывает креативный повторный контакт, учитывая результат предыдущих медиа-кампаний.
+						.main-info--list
+							ul
+								li.docs Кандидаты с полным пакетом документов
+								li.check Проверка знаний соискателей
+								li.world Кандидаты с любой точки мира
+
+	include footer.pug

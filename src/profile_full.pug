@@ -1,0 +1,64 @@
+extends pug/base
+
+append vars
+	- html.classList.push("page-index")
+	- meta.charset = "utf-8"
+	- meta.description = "Shuledas"
+	- title = "Shuledas"
+	- meta.viewport = "width=device-width, initial-scale=1"
+	<link rel="stylesheet" href="css/slider/jslider.css" type="text/css">
+
+
+block content
+	.profile.profile-full
+		include header.pug
+		.profile-top
+			.container 
+				.row
+					.flex.col-12
+						.profile-top--img.align-self-end
+							img(src="https://via.placeholder.com/280x280")
+							.btn-profile-edit
+								i.fas.fa-edit
+						h1.h1 Эмма Рамос
+						button.btn.btn--profile.align-self-end Редактировать
+		.container.flex
+			.col-lg-3.hide-in-992
+			.profile-content.col-12.col-lg-9 
+				.row
+					mixin profile_info(title, info)
+						.profile-content--info.list-institution--summary.flex
+							i.fas.fa-graduation-cap
+							p.institution-summary--title=title
+							p.institution-summary--data=info
+					+profile_info('Дата рождения', '1 Янв 1989')
+					+profile_info('Пол', 'Не указано')
+					+profile_info('Адрес', 'Mecklenburg-Vorpommern, Ortenaukreis, Krefeld, Street av. 180/24')
+					+profile_info('Курение', 'Да')
+					+profile_info('Мед Страховка', 'Да')
+
+					.profile-content--descr
+
+						h2.h2 Обо мне
+
+						p Video Blogger with 1,4 billion Subscribers
+
+						p Since the first conference way back in 1984, TED Talks have inspired us, captivated us, and given us something thought-provoking to watch over lunch. To help you catch the can’t miss gems of TED’s 300+ design-focused talks, we’ve hand-picked a few of our favorites. Facebook’s “like” and “share” buttons are seen more than 20 billion times a day, making them some of the most-viewed design elements ever created. Margaret Gould Stewart leads product design at Facebook and shares three rules for design at such a massive scale, where a tiny tweak to that “like” button could cause outrage.
+		.post-articles
+			.container 
+				.col-12.articles.flex.flex-wrap
+					.main-article--top.flex.justify-content-between.align-items-center
+						h2.h2 Мои статьи
+					mixin article
+						.article--item.post-article--item.col-12.col-lg-3
+							.row.flex-nowrap
+								.article--img 
+									img(src="https://via.placeholder.com/72x72" data-progressive="https://via.placeholder.com/72x72")
+								.article--content 
+									span.article--name Заголовок динною до 92 символов может поместиться 3 строчки
+									p.article--date 27 янв 2018
+								a(href="#").link-mask
+					.post-articles--slider.flex.flex-wrap
+						+article 
+
+		include footer.pug 

@@ -1,0 +1,50 @@
+extends pug/base
+
+append vars
+	- html.classList.push("page-index")
+	- meta.charset = "utf-8"
+	- meta.description = "Shuledas"
+	- title = "Shuledas"
+	- meta.viewport = "width=device-width, initial-scale=1"
+
+block content
+	include header.pug
+	main
+		.container 
+			.col-12.institution-list--top
+				.row.justify-content-between
+					h1.h1 
+						span.h-title Вузы
+							span.h-qty 325
+					a(href="/universities_search.html").btn.btn--hei.btn--hei-color.align-self-center Подобрать
+
+		.institution-wrap.active
+			mixin hei_item
+				.institution-item 
+					.container.flex.flex-wrap
+						.hei-image
+							img(src="https://via.placeholder.com/225x225")
+						.institution-info
+							h5.institution-title Bachelor of Business Administration in Hospitality Management (со специализацией)
+							mixin hei_summary(title,data,classn)
+								.list-institution--summary.flex.align-items-center
+									i.fas.fa-graduation-cap
+									span.institution-summary--title=title
+									span(class=classn)=data
+							+hei_summary("Университет","Hotel Institute Montreux – HIM", "institution-summary--data color-lazure")
+							+hei_summary("Срок обучения","7 семестров", "institution-summary--data")
+							+hei_summary("Степень","Бакалавр", "institution-summary--data")
+							+hei_summary("Тип специальности","Менеджмент", "institution-summary--data")
+							+hei_summary("Расположен","1820 Montreux", "institution-summary--data color-lazure")
+						.institution-cost.flex.flex-column.align-items-end
+							p.institution-price.institution-price--margin € 141,660
+							p.institution-duration За все семестры 
+							a(href="/university_not_paid.html").btn.btn--institution.btn--hei-color.btn--hei-width Подробнее
+			+hei_item
+			+hei_item
+			+hei_item
+			+hei_item
+
+
+
+	include footer.pug

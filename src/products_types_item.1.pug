@@ -1,0 +1,106 @@
+extends pug/base
+
+append vars
+	- html.classList.push("page-index")
+	- meta.charset = "utf-8"
+	- meta.description = "Shuledas"
+	- title = "Shuledas"
+	- meta.viewport = "width=device-width, initial-scale=1"
+	<link rel="stylesheet" href="css/slider/jslider.css" type="text/css">
+
+block content 
+	include header.pug
+	main.content   
+		.product-banner 
+			.product-banner-content
+				h2 Finden Sie Kandidaten für Ihr Team, dort wo sie 
+
+			img(src="images/type-bg1.jpg", alt="")
+			.container.product-types-btn.flex
+				<a class="btn btn--candidates-relative" href="https://www.schuledas.com/job/ru/search/resume">Kandidaten finden</a>
+				<a class="btn btn--candidates-relative" style="background: #29B8A4;" href="https://www.schuledas.com/job/ru/employer/services">Unsere produkte</a>
+		
+		.container.services-item
+			.col-12
+				.row
+					.col-12
+						h2.h2 Zugang zur Bewerberdatenbank
+					.col-12
+						.services-item-descr
+							h3 BEWERBERDATENBANK/ Einzellizenz
+							p Eine Einzellizenz gewährt den Kunden Zugriff auf die Schuledas-Datenbank mit den durchsuchbaren Lebensläufen/Profilen von Jobsuchenden („Bewerberdatenbank”).
+							p Die „Einzellizenz“ ist für eine einzelne natürliche Person, die der direkten Kontrolle des Kunden untersteht („Datenbank-User“), und ermöglicht den Zugriff auf die Bewerberdatenbank über ein individuelles Passwort; Dauer und Typ der Lizenz sind im Auftragsformular angegeben. Für jede Einzellizenz gelten angemessene Nutzungsbedingungen. Lebensläufe/Profile können vom Kunden beliebig oft geöffnet werden.
+							p Der Kunde verpflichtet sich, Schuledas unverzüglich zu informieren, falls eine Person, der ein Passwort erteilt wurde, das Unternehmen verlässt, und Schuledas behält sich das Recht vor, deren Passwort zu löschen und nach entsprechender Information des Kunden ein Ersatzpasswort auszustellen.
+							p Schuledas behält sich außerdem das Recht vor, Passwörter nach entsprechender Information des Kunden in regelmäßigen Abständen zu ändern. Falls weitere User (d.h. andere Personen als die vom Lizenzinhaber benannten Datenbank-User) auf die Bewerberdatenbank zugreifen, stellt dies eine Verletzung der Bestimmungen dieses Vertrages dar.
+							p Der Kunde verpflichtet sich, die Bewerberdatenbank nur für die Suche nach passenden Kandidaten für bestimmte konkrete Positionen zu nutzen und diesen keine anderen Dienste anzubieten. Auch darf die Bewerberdatenbank-Lizenz nicht dazu verwendet werden, um generell Daten von potentiellen Kandidaten zu sammeln.
+					.col-12.services-item-plan
+
+						  
+						.plan-item
+							.plan-item--input
+								input(type="radio" name="plan-radio")
+								span
+							span 1 Monat
+							span.price € 490
+						.plan-item
+							.plan-item--input
+								input(type="radio" name="plan-radio")
+								span
+							span 3 Monat
+							span.price € 1,290
+						.plan-item
+							.plan-item--input
+								input(type="radio" name="plan-radio")
+								span
+							span 6 Monat
+							span.price € 2,290
+
+				.container.anfragen-block
+					.row.align-items-center.flex-column
+						.btn-details-wrap
+							.btn Anfragen
+
+		.block-line
+		.container
+			.col-12
+				.row.justify-content-center
+					.col-12
+						h2.h2 Choose another plan 
+					mixin benefit_item(summary,title,descr,icon,link)
+						.col-12.col-md-6.col-xl-3
+							.benefit-item
+								a(href=link) 
+								p.benefit--title=summary 
+								ul
+									li - 60 Tage Laufzeit der Präsenz auf der Schuledas Platform, je Stellenanzeige.
+									li - Präsenz in allen baltischen Staaten, GUS-Staaten und Georgien über das Portal 
+										a(href="/") www.schuledas.com
+										| .
+									li - Präsenz Ihres Unternehmens auf unseren social media Kanälen: Facebook, Instagram und Twitter 
+								//- img(src=icon, alt="").benefit--icon
+								.btn Подробнее
+					mixin benefit_item(summary,link,image)
+						.col-12.col-md-6.col-xl-3
+							.product-types-item
+								a(href=link)
+								img(src=image)
+								//- p.benefit--summary=summary
+								//- p.benefit--title=title
+								//- p.benefit--descr=descr
+								//- img(src=icon, alt="").benefit--icon
+								//- p.benefit--summary
+								p.benefit--title=summary
+								//- p.benefit--descr=descr
+			 
+								//- img(src=icon, alt="").benefit--icon
+								.btn Подробнее
+					+benefit_item(  'Stellenanzeige veröffentlichen', 
+									'/products_types_item.html',
+									'images/type.jpg') 
+					+benefit_item(  'Individuelle Leistungen', 
+									'/products_types_item.2.html',
+									'images/type2.jpg')
+					+benefit_item(  'Stellenanzeigen via E-Mail an Ihre Zielgruppe', 
+									'/products_types_item.3.html',
+									'images/type3.jpg')
+	include footer.pug

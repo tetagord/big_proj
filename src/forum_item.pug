@@ -1,0 +1,202 @@
+extends pug/base
+
+append vars
+	- html.classList.push("page-index")
+	- meta.charset = "utf-8"
+	- meta.description = "Shuledas"
+	- title = "Shuledas"
+	- meta.viewport = "width=device-width, initial-scale=1"
+
+block content
+	.forum-page
+		include header.pug
+		main
+			.container 
+				.col-12.breadcrumbs
+					.row
+						ul.flex-wrap
+							li
+								a(href="/forum.html")  Все форумы
+								i.fas.fa-chevron-right
+			
+							li
+								a(href="/forum-education.html") Образование
+								i.fas.fa-chevron-right
+
+							li
+								a(href="/forum-schools.html") Форум о школах-пансионах
+								i.fas.fa-chevron-right
+
+							li 
+								span Такой себе пост
+
+				.col-12
+					.row.justify-content-between
+						.node-top.flex.justify-content-between
+							h2.h2 Такой себе пост
+							.forum-settings.flex 
+								a(href="#") 
+									i.fab.fa-hubspot
+									span Подписаться на новые ответы
+								span.forum-settings--sort 
+									i.fas.fa-arrow-down
+									span Последний пост 
+ 
+				.col-12
+					.row.forum-wrap
+						.f-post.flex
+							.f-post--image
+								img(src="https://via.placeholder.com/64x64")
+								.online.true
+							.f-post--body
+								.f-post--top.flex
+									span.f-post--author Eddie Lobanovsky
+									span.f-post--role Moderator
+									span.f-post--tag (@falshimage)
+									span.f-post--connected Присоединился: 1 месяц назад
+									span.f-post--allsms Сообщения: 1
+									.rating.flex
+										span.star.star--full
+											i.fas.fa-star
+										span.star.star--full
+											i.fas.fa-star
+										span.star.star--full
+											i.fas.fa-star
+										span.star.star--full
+											i.fas.fa-star
+										span.star
+											i.fas.fa-star
+									.f-post--more
+										//- add mob 
+										span.mob
+											i.fas.fa-ellipsis-h
+										.f-post--mob.flex
+											//- EOT add mob
+											span
+												i.fas.fa-user
+											span
+												i.fas.fa-comments
+											span
+												i.fab.fa-hubspot
+									span.f-post--date 01:37, 11 Nov 2018
+								.f-post--content.flex.flex-wrap
+									p.f-post--sms This concept has nav Copy
+									.f-post--features.flex
+										button.f-post--btn.sms Ответить
+										button.f-post--btn.sms Цитата
+										//- add mob 
+										span.mob
+											i.fas.fa-ellipsis-h
+										.f-post--mob.flex
+											//- EOT add mob
+											button.f-post--btn.complain 
+												i.fas.fa-exclamation-circle
+												| Пожаловаться
+											button.f-post--btn.edit 
+												i.fas.fa-edit
+												| Редактировать
+											button.f-post--btn.remove 
+												i.fas.fa-ban
+												| Удалить
+									.f-post--actions
+										a(href="#")
+											i.fas.fa-thumbs-up
+										a(href="#")
+											i.fas.fa-share
+								.f-post--footer
+									span
+										i.fas.fa-question-circle
+										| Не решено
+									span
+										i.fas.fa-times-circle
+										| Не прикрепленный
+									span
+										i.fas.fa-eye-slash
+										| Приватно
+									span
+										i.fas.fa-eye-slash
+										| Закрыть
+									span
+										i.fas.fa-file
+										| Не утверждено
+
+						.f-post.flex
+							.f-post--image
+								img(src="https://via.placeholder.com/64x64")
+								.online
+							.f-post--body
+								.f-post--top.flex
+									span.f-post--author Eddie Lobanovsky
+									span.f-post--role Moderator
+									span.f-post--tag (@falshimage)
+									span.f-post--connected Присоединился: 1 месяц назад
+									span.f-post--allsms Сообщения: 1
+									.rating.flex
+										span.star.star--full
+											i.fas.fa-star
+										span.star.star--full
+											i.fas.fa-star
+										span.star.star--full
+											i.fas.fa-star
+										span.star.star--full
+											i.fas.fa-star
+										span.star
+											i.fas.fa-star
+									.f-post--more
+										//- add mob
+										span.mob
+											i.fas.fa-ellipsis-h
+										.f-post--mob.flex
+											//- EOT add mob
+											span
+												i.fas.fa-user
+											span
+												i.fas.fa-comments
+											span
+												i.fab.fa-hubspot
+									span.f-post--date 01:37, 11 Nov 2018
+								.f-post--content.flex.flex-wrap
+									p.f-post--sms This concept has nav Copy
+									p.f-post--sms.hightlight
+										span This concept has nav Copy
+									.f-post--features.flex
+										button.f-post--btn.sms Ответить
+										button.f-post--btn.sms Цитата
+										//- add mob 
+										span.mob
+											i.fas.fa-ellipsis-h
+										.f-post--mob.flex
+											//- EOT add mob
+											button.f-post--btn.complain 
+												i.fas.fa-exclamation-circle
+												| Пожаловаться
+											button.f-post--btn.edit 
+												i.fas.fa-edit
+												| Редактировать
+											button.f-post--btn.remove 
+												i.fas.fa-ban
+												| Удалить
+									.f-post--actions
+										a(href="#").active
+											i.fas.fa-thumbs-up
+										a(href="#").active
+											i.fas.fa-share
+								.f-post--footer
+									span
+										i.fas.fa-question-circle
+										| Не решено
+									span
+										i.fas.fa-times-circle
+										| Не прикрепленный
+									span
+										i.fas.fa-eye-slash
+										| Приватно
+									span
+										i.fas.fa-eye-slash
+										| Закрыть
+									span
+										i.fas.fa-file
+										| Не утверждено
+
+
+		include footer.pug

@@ -1,0 +1,365 @@
+extends pug/base
+
+append vars
+	- html.classList.push("page-index")
+	- meta.charset = "utf-8"
+	- meta.description = "Shuledas"
+	- title = "Shuledas"
+	- meta.viewport = "width=device-width, initial-scale=1"
+
+block content
+	include header.pug
+	main
+		.node-top.flex
+			.node-top--img
+				img(src="https://via.placeholder.com/607x607") 
+			.node-top--info.flex.flex-column
+				.node-top--content.flex.flex-column
+					.post-title
+						p.post-time-read 3 минуты на чтение
+						h1.h1 The 7 TED Talks every designer should watch
+
+					.post-author.author.flex
+						.author--avatar.post--avatar
+							img(src="https://via.placeholder.com/80x80") 
+						.author--content
+							p.author--name Margaret Kelsey  •  Video Blogger with 1,4 billion Subscribers
+							p.author--date Sep 20, 2018
+
+				.node-join.flex.justify-content-between
+					.social-btns.flex.align-items-center
+						a(href="#").social-btn
+							i.fas.fa-link
+						a(href="#").social-btn
+							i.fab.fa-twitter
+						a(href="#").social-btn
+							i.fab.fa-facebook-f
+
+					button.btn.btn--post Подписаться
+
+		.container
+			.row.justify-content-center
+					
+				.col-12.col-lg-10.col-xl-8.post-content
+					p.post-descr--big-letter Since the first conference way back in 1984, TED Talks have inspired us, captivated us, and given us something thought-provoking to watch over lunch. To help you catch the can’t miss gems of TED’s 300+ design-focused talks, we’ve hand-picked a few of our favorites. Facebook’s “like” and “share” buttons are seen more than 20 billion times a day, making them some of the most-viewed design elements ever created. Margaret Gould Stewart leads product design at Facebook and shares three rules for design at such a massive scale, where a tiny tweak to that “like” button could cause outrage.
+
+					.post-video.flex.flex-column
+						h2.h2 1. “How giant websites design for you (and a billion others, too)” by Margaret Gould Stewart
+						
+						iframe(src="https://www.youtube.com/embed/668nUCeBHyY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen)
+
+					.post-video.post-video--last.flex.flex-column
+						h2.h2 2. “The stories behind The New Yorker’s iconic covers” by Françoise Mouly
+						
+						iframe(src="https://www.youtube.com/embed/668nUCeBHyY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen)
+					
+					p.post-descr For more than 20 years, Françoise Mouly has helped decide what appears on The New Yorker’s famous cover. In this visual retrospective, she talks about how simple drawings can cut through the millions of images we see each day and elegantly capture the feeling of a moment in time.
+			
+
+				.col-12.col-lg-10.col-xl-8.post-content
+					.flex.justify-content-between
+						h2.h2 
+							span.h-title Комментарии
+								span.h-qty 23
+								
+						
+						.post-settings.align-self-end
+							i.fas.fa-envelope-square
+							.chat-setting
+								p.chat-setting--title Подписаться
+								p.chat-setting--default Новые последующие комментарии
+								p.chat-setting--default Новые ответы на мои комментарии
+								.chat-setting--form
+									form(method="POST").flex
+										input(type="text" placeholder="Электронная почта")
+										button.btn.btn--chat Ok
+					.comment-ability.flex
+						.comment-ability--item.flex
+							a(href="#")
+								i.fas.fa-bolt
+							a(href="#")
+								i.fas.fa-fire
+							a(href="#")
+								i.fas.fa-globe
+								span 1
+							a(href="#")
+								i.fas.fa-comment-dots
+								span 1
+								span.comment-ability--title Followers
+									
+							a(href="#")
+								i.fas.fa-share-alt
+								span 1
+
+						.comment-ability--item.flex
+							a(href="#")
+								i.fas.fa-user-circle
+								span 2
+							.comment-ability--subscr.flex
+								a(href="#")
+									img(src="https://via.placeholder.com/24x24")
+								a(href="#")
+									img(src="https://via.placeholder.com/24x24")
+								a(href="#")
+									img(src="https://via.placeholder.com/24x24")
+
+						.comment-ability--item.comment-ability--menu
+							button.comment-ability--btn Подписаться
+								i.fas.fa-chevron-down
+							.chat-setting
+								p.chat-setting--title Get notifications about:
+								.comment-ability--checkbox.flex.justify-content-between
+									p New follow-up comments
+									.filter-by--type.align-self-center
+										input(type="checkbox").filter-by--input 
+										span.filter-by--mask
+								.comment-ability--checkbox.flex.justify-content-between
+									p New answers of my comments
+									.filter-by--type.align-self-center
+										input(type="checkbox").filter-by--input 
+										span.filter-by--mask
+
+						.comment-ability--item.comment-ability--menu 
+							button.comment-ability--btn New
+								i.fas.fa-chevron-down
+
+		.comment-bg
+			.container
+				.flex.flex-column 
+					.col-12.col-lg-10.col-xl-8.align-self-center
+						.comment-block
+							mixin comment(classn, notif, blocked)
+								.comment.flex.flex-wrap(class=classn)
+									.comment-expand
+										span -
+									img(src="https://via.placeholder.com/64x64").comment--avatar
+									.comment-info
+										.comment-top.flex.justify-content-between
+											span.comment--author Eddie Lobanovskiy
+											button.comment--subscr 
+												i.fas.fa-share-alt
+												| Subscribe
+											.comment-top--left
+												i.fas.fa-lock
+												span.comment--date 00:05 01 Нояб 2018
+										p.comment--sms This concept has navigated right into my heart.
+										.comment-setting.flex
+											.comment-btns.flex
+												button.btn.btn--comment.blue Replay
+												button.btn.btn--comment Edit
+												button.btn.btn--comment Pin
+												button.btn.btn--comment Close
+												span.comment-setting--more
+													i.fas.fa-ellipsis-h
+													.chat-setting
+														p Share to VK
+														p Share to FB
+														p Share to OK
+														p Copy link to clipboard
+														p.red Complain
+											.comment-voice.flex.align-items-center
+												span.comment-voice--arrow.up
+													i.far.fa-thumbs-up
+												span.comment-voice--qty 2
+												span.comment-voice--arrow.down
+													i.far.fa-thumbs-down
+									.comment.flex.flex-wrap(class=classn)
+										.comment-expand
+											span -
+										img(src="https://via.placeholder.com/32x32").comment--avatar
+										.comment-info
+											.comment-top.flex.justify-content-between
+												span.comment--author Eddie Lobanovskiy
+												button.comment--subscr 
+													i.fas.fa-share-alt
+													| Subscribe
+												.comment-top--left
+													i.fas.fa-map-pin
+													span.comment--date 00:05 01 Нояб 2018
+											p.comment--sms This concept has navigated right into my heart.
+											.comment-setting.flex
+												.comment-btns.flex
+													button.btn.btn--comment.blue Replay
+													button.btn.btn--comment Edit
+													button.btn.btn--comment Pin
+													button.btn.btn--comment.green Open
+													.comment-setting--more
+														i.fas.fa-ellipsis-h
+														.chat-setting
+															p Share to VK
+															p Share to FB
+															p Share to OK
+															p Copy link to clipboard
+															p.red Complain
+												.comment-voice.flex.align-items-center
+													span.comment-voice--arrow.up
+														i.far.fa-thumbs-up
+													span.comment-voice--qty 2
+													span.comment-voice--arrow.down
+														i.far.fa-thumbs-down
+
+										.comment.flex.flex-wrap(class=classn) 
+											img(src="https://via.placeholder.com/32x32").comment--avatar
+											.comment-info
+												.comment-top.flex.justify-content-between
+													span.comment--author Eddie Lobanovskiy
+														span  • YOU 
+													span.comment--date 00:05 01 Нояб 2018
+												.comment--sms.by-moderator
+													p This concept has navigated right into my heart.
+													p Comment is awaiting moderation.
+										.comment.flex.flex-wrap(class=classn) 
+											img(src="https://via.placeholder.com/32x32").comment--avatar
+											.comment-info
+												.comment-top.flex.justify-content-between
+													span.comment--author Eddie Lobanovskiy
+														span  • YOU 
+													span.comment--date 00:05 01 Нояб 2018
+												.comment--sms.deleted
+													p This concept has navigated right into my heart.
+													p Comment has been deleted
+
+
+									.comment.flex.flex-wrap(class=classn)
+										.comment-expand
+											span +
+										img(src="https://via.placeholder.com/32x32").comment--avatar
+										.comment-info
+											.comment-top.flex.justify-content-between
+												span.comment--author Eddie Lobanovskiy
+												button.comment--subscr.comment--unsubscr
+													i.fas.fa-share-alt
+													| Unsubscribe
+												span.comment--date 00:05 01 Нояб 2018
+											p.comment--sms This concept has navigated right into my heart.
+											.comment-setting.flex
+												.comment-btns.flex
+													button.btn.btn--comment.blue Replay
+													button.btn.btn--comment Edit
+													button.btn.btn--comment.green Unpin
+													button.btn.btn--comment Close
+													span.comment-setting--more
+														i.fas.fa-ellipsis-h
+														.chat-setting
+															p Share to VK
+															p Share to FB
+															p Share to OK
+															p Copy link to clipboard
+															p.red Complain
+												.comment-voice.flex.align-items-center
+													span.comment-voice--arrow.up
+														i.far.fa-thumbs-up
+													span.comment-voice--qty 2
+													span.comment-voice--arrow.down
+														i.far.fa-thumbs-down
+									
+							+comment
+
+
+			.container
+				.flex.flex-column 
+					.col-12.col-lg-10.col-xl-8.align-self-center
+
+						.comment-block
+							.comment.flex.flex-wrap(class=classn)
+								.comment-expand
+									span -
+								img(src="https://via.placeholder.com/64x64").comment--avatar
+								.comment-info
+									.comment-top.flex.justify-content-between
+										span.comment--author Eddie Lobanovskiy
+										button.comment--subscr 
+											i.fas.fa-share-alt
+											| Subscribe
+										span.comment--date 00:05 01 Нояб 2018
+									p.comment--sms This concept has navigated right into my heart.
+									.comment-setting.flex
+										.comment-btns.flex
+											button.btn.btn--comment.blue Replay
+											button.btn.btn--comment Edit
+											button.btn.btn--comment Pin
+											button.btn.btn--comment Close
+											span.comment-setting--more
+												i.fas.fa-ellipsis-h
+												.chat-setting
+													p Share to VK
+													p Share to FB
+													p Share to OK
+													p Copy link to clipboard
+													p.red Complain
+										.comment-voice.flex.align-items-center
+											span.comment-voice--arrow.up
+												i.far.fa-thumbs-up
+											span.comment-voice--qty 2
+											span.comment-voice--arrow.down
+												i.far.fa-thumbs-down
+		.comment-add
+			.container
+				.flex.flex-column 
+					.col-12.col-lg-10.col-xl-8.align-self-center
+						form.comment-form--post
+							.comment-add--top.flex
+								.comment-add--avatar
+									img(src="https://via.placeholder.com/32x32")
+									i.fas.fa-cog
+									.chat-setting
+										p
+											a(href="#") My Content & Settings
+										p
+											a(href="#") Logout 
+								textarea(placeholder="Type here to create a comment…")
+							.comment-add--block.flex.justify-content-between
+								span.comment-add--info
+									i.fas.fa-shield-alt
+									| This form is protected by an anti-spam system
+								.comment-add--block.flex.justify-content-between.align-items-center
+									span.comment-add--btn 
+										i.fas.fa-map-pin
+									span.comment-add--btn 
+										i.fas.fa-lock
+									span.comment-add--btn 
+										i.fas.fa-bell
+									button.btn Post a comment
+
+						form.comment-form--login
+							.comment-add--top.flex
+								textarea(placeholder="Type here to create a comment…")
+							.comment-add--block.flex.justify-content-between
+								span.comment-add--info
+									i.fas.fa-shield-alt
+									| This form is protected by an anti-spam system
+								.comment-add--block.flex.justify-content-between.align-items-center
+									button.btn SignIn
+									button.btn LogIn and post a comment
+
+
+
+
+															
+
+
+		.post-articles
+			.container 
+				.col-12.articles.flex.flex-wrap
+					//- .main-article--top.flex.justify-content-between.align-items-center
+					//- 	h2.h2 Вам будет интересно  
+					//- mixin article
+					//- 	.article--item.post-article--item.col-12.col-lg-3
+					//- 		.row.flex-nowrap
+					//- 			.article--img 
+					//- 				img(src="https://via.placeholder.com/72x72" data-progressive="https://via.placeholder.com/72x72")
+					//- 			.article--content 
+					//- 				span.article--name Заголовок динною до 92 символов может поместиться 3 строчки
+					//- 				p.article--date 27 янв 2018
+					//- 			a(href="#").link-mask
+					//- .post-articles--slider.flex.flex-wrap
+					//- 	+article
+					//- 	+article
+					//- 	+article
+					//- 	+article
+					//- 	+article
+					//- 	+article
+					//- 	+article
+					//- 	+article
+
+	include footer.pug

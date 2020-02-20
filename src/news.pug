@@ -1,0 +1,48 @@
+extends pug/base
+
+append vars
+	- html.classList.push("page-index")
+	- meta.charset = "utf-8"
+	- meta.description = "Shuledas"
+	- title = "Shuledas"
+	- meta.viewport = "width=device-width, initial-scale=1"
+
+block content
+	.news
+		include header.pug
+		main
+			.container 
+				.col-12.node-block
+					.row
+						.node-top.flex.justify-content-between
+							h1.h1 
+								span.h-title Новости
+									span.h-qty 325
+							button(href="/articles.html").btn.btn--node.align-self-center Все статьи
+								i.fas.fa-search
+
+			.container 
+				.col-12.news-page
+					.row
+						mixin article_item(tag,name,author)
+							.node-article--item.col-12.col-md-6.flex
+								.row
+									.node-article--img
+										img(src="https://via.placeholder.com/200x200")
+									.node-article--info
+										a(href="/news.html").node-article--tag=tag
+										p.node-article--name=name
+										p.node-article--author=author
+									a(href="/post.html").link-mask
+						+article_item("новости", "Его величество рислинг", "Jordan Mills")
+						+article_item("новости", "Его величество рислинг", "Jordan Mills")
+						+article_item("Образование", "Государственные VS частные школы Германии", "Cheryl Spencer")
+						+article_item("Образование", "Государственные VS частные школы Германии", "Cheryl Spencer")
+						+article_item("Карьера и свой бизнес", "Как сэкономить студенту ВУЗа Германии?", "Justin Carlson")
+						+article_item("Карьера и свой бизнес", "Как сэкономить студенту ВУЗа Германии?", "Justin Carlson")
+						+article_item("культура", "Как улучшить свои шансы на рынке труда германии, если вы — гуманитарий?", "Margaret Riley")
+						+article_item("культура", "Как улучшить свои шансы на рынке труда германии, если вы — гуманитарий?", "Margaret Riley")
+						+article_item("семья", "Его величество рислинг", "Jordan Mills")
+						+article_item("семья", "Его величество рислинг", "Jordan Mills")
+
+	include footer.pug

@@ -1,0 +1,52 @@
+		header.header.header-career
+			.container  
+				.col-12
+					.row.justify-content-between
+						.logo.align-self-center
+							a(href="/")
+								img(src="images/logo/logo.png")
+						nav.header-nav.flex
+							.mobile-toggle
+								span.mobile-toggle--item
+								span.mobile-toggle--item
+								span.mobile-toggle--item
+							ul.header-nav--ul.flex
+								mixin nav_link(link, text)
+									li.header-nav--li
+										a(href=link).header-nav--link=text
+								li.header-nav--li
+									a(href="/").header-nav--link.active Что такое Schuledas
+								+nav_link("/school_search.html", "Школы")
+								+nav_link("/universities_search.html", "Вузы")
+								+nav_link("/articles.html", "Статьи")
+								+nav_link("/post.html", "Статья")
+								+nav_link("/forum.html", "Форум")
+								li.header-nav--li.sublist
+									a(href=link).header-nav--link Доп. стр.
+									ul.submenu
+										+nav_link("/about_us.html", "О нас")
+										+nav_link("/contact_us.html", "Связаться с нами")
+										+nav_link("/chat_from_univer.html", "Чат")
+										//- +nav_link("/chat_from_user.html", "Чат от пользователя")
+										+nav_link("/school_not_paid.html", "Школа без платы")
+										+nav_link("/school_paid.html", "Школа с платой")
+										+nav_link("/opinion.html", "Блог")
+										+nav_link("/profile.html", "Профиль редактировать")
+										+nav_link("/profile_full.html", "Профиль")
+										+nav_link("/news.html", "Новости")
+										+nav_link("/university_not_paid.html", "вуз без платы")
+										+nav_link("/university_paid.html", "вуз с платой")
+										+nav_link("/specialization_not_paid.html", "Специльность без платы")
+										+nav_link("/specialization_paid.html", "Специльность с платой")
+										+nav_link("/school_list.html", "Список школы")
+										+nav_link("/universities_list.html", "Список ВУЗа")
+								li.header-nav--li
+									a(href="/search.html").header-nav--link.header-nav--search Поиск
+										i.fas.fa-search
+							.header-user.align-self-center
+								img(src="https://via.placeholder.com/32x32", alt="")
+								.header-user--arrow
+									i.fas.fa-chevron-down
+									ul
+										li
+											a(href="#") some page?

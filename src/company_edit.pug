@@ -1,0 +1,146 @@
+extends pug/base
+
+append vars
+	- html.classList.push("page-index")
+	- meta.charset = "utf-8"
+	- meta.description = "Shuledas"
+	- title = "Shuledas"
+	- meta.viewport = "width=device-width, initial-scale=1"
+block content 
+	.cv
+		include header_career.pug
+ 
+		main
+			.cv-fon
+				img(src="https://via.placeholder.com/1920x400", alt="")
+			.container
+				.row
+					.col-12.col-xl-6.cv-left
+						img(src="https://via.placeholder.com/300x300", alt="").cv-avatar
+						mixin cv_expr
+							.cv-exp.col-12
+								h2.h2 Вакансии
+								.cv-content
+									.cv-input
+										label Вакансия №
+											span.job-num 1
+										input(type="text" placeholder="Google...")
+										.cv--btn.flex
+											i.fas.fa-minus.remove-exp
+											i.fas.fa-plus.add-exp
+									.cv-company-filter
+										p Сфера деятельности
+										.filter-select.js-filter
+											select
+												option(value="1") 2018
+												option(value="2") 2017
+												option(value="3") 2016
+									.cv-company-filter
+										p Месторасположение
+										.filter-select.js-filter
+											select
+												option(value="1") 2018
+												option(value="2") 2017
+												option(value="3") 2016
+
+									.cv-company-filter.salary
+										p Зарплатное предложение
+										.flex.justify-content-between.align-items-end
+											.cv-input.cv-input--small
+												label От
+												input(type="text" placeholder="100,000")
+												.cv--btn.flex 
+													i.fas.fa-plus
+											.cv-input.cv-input--small
+												label До
+												input(type="text" placeholder="110,000...")
+											.cv-input.cv-input--small
+												.cv-period 
+													.filter-select.js-filter
+														select
+															option(value="1") В Год
+															option(value="2") В Месяц
+															option(value="3") В День
+									.cv-input
+										p Требования и необходимые навыки
+										textarea 
+									.cv-company-filter
+										p Минимальная квалификация
+										.filter-select.js-filter
+											select
+												option(value="1") 2018
+												option(value="2") 2017
+												option(value="3") 2016
+									.cv-company-row.flex
+										.cv-company-filter
+											p Тип занятости
+											.filter-select.js-filter
+												select
+													option(value="1") 2018
+													option(value="2") 2017
+													option(value="3") 2016
+										.filter-by-company.flex.flex-column
+											p Удаленная работа
+											.filter-by.flex.filter-career
+												span.filter-by--title Нет
+												.filter-by--type
+													input(type="checkbox" name="filter-price").filter-by--input
+													span.filter-by--mask
+												span.filter-by--title Да
+								 
+									.cv-radio.flex.flex-column
+										p Обязательны документы для работы в Европе?
+										.filter-by.flex.filter-career
+											span.filter-by--title Нет
+											.filter-by--type
+												input(type="checkbox" name="filter-price").filter-by--input
+												span.filter-by--mask
+											span.filter-by--title Да
+						+cv_expr
+					.col-12.col-xl-6.cv-right  
+								
+						.cv--item.cv--company
+							h2.h2  Основные данные
+							.cv-content 
+								.cv-input
+									label Название
+									input(type="text" placeholder="Apple Inc…") 
+								.cv-input
+									label Глобальное описание
+									textarea(type="text" placeholder="The most powerful products for business are the ones people already love to use…")
+								.cv-input
+									label Подробное описание
+									textarea(type="text" placeholder="Apple products have always been designed for the way we work as much as for the way we live. Today they help employees to work more simply and productively, solve problems creatively, and collaborate with a shared purpose. And they’re all designed to work together beautifully…")
+								.cv-input
+									p Месторасположение
+									div
+										input(type="text" placeholder="Cupertino, US (HQ) 1 Apple Park Way…...")
+										.cv--btn.flex
+											i.fas.fa-minus
+											i.fas.fa-plus
+									div
+										input(type="text" placeholder="Cupertino, US (HQ) 1 Apple Park Way…...").cv-input-margintop
+										.cv--btn.flex
+											i.fas.fa-minus
+											i.fas.fa-plus
+ 
+						.cv--item.cv--company
+							h2.h2 Дополнительное
+							.cv-content.flex
+								.cv-input
+									p Вебсайт
+									input(type="text" placeholder="https://apple.com…")
+									.cv--btn.flex 
+										i.fas.fa-plus
+								.cv-period 
+									p Количество сотрудников 
+									.filter-select.js-filter
+										select
+											option(value="1") 10.000 
+											option(value="1") 10.000 
+											option(value="1") 10.000 
+		
+		include footer.pug
+
+	script(src="js/jquery-3.1.1.min.js")
+
